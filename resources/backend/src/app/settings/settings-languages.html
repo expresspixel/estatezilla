@@ -1,0 +1,136 @@
+
+
+<div class="container-fluid no-padding">      
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">  
+                <br />
+                <h3>Languages</h3>
+                <br /><br />
+                <div ng-include="'app/settings/navbar.html'"></div>
+
+                <br />
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Availiable languages</h4>
+                        <p> Edit your language/locale information. The languages show up in your theme. If you want to add a locale instead please use the syntax lang-COUNTRY (e.g. en-GB, en-US). You can re-order the languages by clicking the up and down arrows. </p>
+
+
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45px;">&nbsp;</th>
+                                    <th style="width: 20px;">&nbsp;</th>
+                                    <th class="col-sm-5">Language name</th>
+                                    <th class="col-sm-3">Language code</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>                                
+                            <tbody>
+                                <tr style="border-top: none" ng-repeat-start="(localeKey, localeValue) in localesList | orderBy:'position':reverse" ng-hide="editKey == localeValue.id">
+                                    <td><a href="" style="margin-right: 2px;" ng-click="move(localeKey, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="move(localeKey, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+                                    <td ng-show="false">
+                                        <a ng-show="currentLocale == localeValue.code" class="muted secondary-link" title="Default language"><i class="fa fa-circle"></i></a>
+                                        <a href="" ng-click="setDefaultLocaleLink(localeValue.code)" ng-show="currentLocale != localeValue.code" class="muted secondary-link" title="Make default"><i class="fa fa-circle-o"></i></a>
+                                    </td>
+                                    <td ng-show="true">
+                                        <a ng-show="localeValue.visible" ng-click="setVisible(localeValue, 0)" class="muted secondary-link" title="Default language"><i class="fa fa-circle"></i></a>
+                                        <a href="" ng-click="setVisible(localeValue, 1)" ng-show="!localeValue.visible" class="muted secondary-link" title="Make default"><i class="fa fa-circle-o"></i></a>
+                                    </td>
+                                    <td><a href="" ng-click="edit(localeValue.id)"><strong>{{localeValue.name}}</strong></a> (<a href="" ng-click="deleteLocale(localeValue)" class="muted delete-link">Delete</a>)</td>
+                                    <td><a href="" ng-click="edit(localeValue.id)"><strong>{{localeValue.code}}</strong></a></td>
+                                    <td><a href="" ng-click="edit(localeValue.id)">Edit</a></td>
+                                </tr>
+                                <tr style="border-top: none" ng-repeat-end="(localeKey, localeValue) in localesList | orderBy:'position':reverse" ng-show="editKey == localeValue.id">
+                                    <td><a href="#" style="margin-right: 2px;"><i class="fa fa-arrow-up"></i></a><a href="#"><i class="fa fa-arrow-down"></i></a></td>
+                                    <td>&nbsp;</td>
+                                    <td>                                    
+                                        <input type="text" ng-model="localeCopy.name" class="form-control">
+                                    </td>
+                                    <td>
+										<input type="text" style="width: 60px;" class="form-control" ng-model="localeCopy.code" placeholder="e.g. en, es, fr..."/>
+									</td>
+                                    <td></td>
+                                    <td ng-hide="localeUpdating"><button type="button" class="btn btn-default" ng-click="updateLocale(localeValue, localeCopy)">Update</button> | <a href="" ng-click="cancelEdit(localeValue.id)">Cancel</a></td>
+                                    <td ng-show="localeUpdating"><button type="button" class="btn btn-default"><i class="fa fa-refresh fa-spin"></i>  Updating</button></td>
+                                </tr>                              
+                                
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+   
+
+                                    <input type="text" ng-model="additional.name" typeahead="item.nativeName as item.nativeName for item in languageOptions | filter:$viewValue | limitTo:8" class="form-control" typeahead-on-select="additionalSelect($item, $model, $label)">
+
+                                        
+                                    </td>
+                                    <td><input type="text" class="form-control" ng-model="additional.code" placeholder="e.g. en, es, fr..."/></td>
+                                    <td><button type="button" class="btn btn-default" ng-click="addLocale()">Add language</button></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <form ng-submit="setDefaultLocaleForm()">
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Default language</label><br />
+                                        <select class="form-control" ng-model="currentLocale" ng-options="item.code as item.name for item in localesList">
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label><br />
+                                        <button type="submit" class="btn btn-default">Submit</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>  
+
+
+                        </form>
+
+                    </div>                       
+
+
+                </div>                      
+                <br />                                      
+                <br />
+
+
+            </div>
+
+        </div>      
+        <br />
+        <br />
+
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" ng-app="ngAdmin">
+    <head>
+        <meta charset="utf-8">
+        <title>Adminstrator - estatezilla</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		
+        <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+        <link rel="stylesheet" href="app/vendor.css">
+        <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/ng-table/dist/ng-table.min.css" />
+        <link rel="stylesheet" href="../bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+        <link rel="stylesheet" href="../bower_components/angular-ui-select/dist/select.css" />
+        <link rel="stylesheet" href="../bower_components/perfect-scrollbar/css/perfect-scrollbar.css" />
+        <link rel="stylesheet" href="../bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+        <link rel="stylesheet" href="../bower_components/angular-native-picker/build/themes/default.css" />
+        <link rel="stylesheet" href="../bower_components/angular-native-picker/build/themes/default.date.css" />
+        <link rel="stylesheet" href="../bower_components/angular-native-picker/build/themes/default.time.css" />
+        <link rel="stylesheet" href="../bower_components/angular-xeditable/dist/css/xeditable.css" />
+        <link rel="stylesheet" href="../bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
+        <!-- endbower -->
+		<link rel="stylesheet" href="../bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+		<link rel="stylesheet" href="libs/sweetalert/dist/sweetalert.css" />
+        <!-- endbuild -->
+
+        <!-- build:css({.tmp,src}) styles/app.css -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="app/bootstrap.css">
+        <link rel="stylesheet" href="app/theme.css">
+        <!-- endinject -->
+        <!-- endbuild -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    </head>
+    <body class="{{pageClass}}">
+        <!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+        <div ui-view></div>
+		
+			<div id="main-loader" class="ui-ios-overlay" style="display: none;">
+		<i class="fa fa-circle-o-notch fa-spin"></i> <span class="title">Loading...</span>
+	</div>
+	
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                                                                    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                                   e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                                   e.src='//www.google-analytics.com/analytics.js';
+                                   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script> 
+		
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.9/ace.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+		<script src="//cdn.ckeditor.com/4.5.2/standard/ckeditor.js"></script>
+
+        <!-- build:js(src) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+        <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="../bower_components/angular-touch/angular-touch.js"></script>
+        <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="../bower_components/lodash/lodash.js"></script>
+        <script src="../bower_components/restangular/dist/restangular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="../bower_components/stringjs/lib/string.min.js"></script>
+        <script src="../bower_components/moment/moment.js"></script>
+        <script src="../bower_components/angular-moment/angular-moment.js"></script>
+        <script src="../bower_components/angular-data/dist/angular-data.js"></script>
+        <script src="../bower_components/angular-cache/dist/angular-cache.js"></script>
+        <script src="../bower_components/ng-remote-validate/release/ngRemoteValidate.js"></script>
+        <script src="../bower_components/angular-messages/angular-messages.js"></script>
+        <script src="../bower_components/noty/js/noty/packaged/jquery.noty.packaged.js"></script>
+        <script src="../bower_components/ng-table/dist/ng-table.min.js"></script>
+        <script src="../bower_components/ng-ckeditor/ng-ckeditor.js"></script>
+        <script src="../bower_components/angular-ui-ace/ui-ace.js"></script>
+        <script src="../bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+        <script src="../bower_components/angular-ui-select/dist/select.js"></script>
+        <script src="../bower_components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+        <script src="../bower_components/jquery-sticky/jquery.sticky.js"></script>
+        <script src="../bower_components/ngRange/dist/ngRange.js"></script>
+        <script src="../bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+        <script src="../bower_components/angular-native-picker/build/angular-datepicker.js"></script>
+        <script src="../bower_components/angular-file-upload/angular-file-upload.min.js"></script>
+        <script src="../bower_components/angular-truncate/src/truncate.js"></script>
+        <script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+        <script src="../bower_components/nganalytics/src/ng-analytics.min.js"></script>
+        <script src="../bower_components/api-check/dist/api-check.js"></script>
+        <script src="../bower_components/angular-formly/dist/formly.js"></script>
+        <script src="../bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
+        <script src="../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+        <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+        <script src="../bower_components/speakingurl/speakingurl.min.js"></script>
+        <script src="../bower_components/angular-cookie/angular-cookie.js"></script>
+        <script src="../bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
+        <!-- endbower -->
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="../bower_components/ui-router-extras/release/ct-ui-router-extras.js"></script>
+        <script src="../bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.min.js"></script>
+		<script src="../bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+        <script type="text/javascript" src="../bower_components/angular-date-time-input/src/dateTimeInput.js"></script>
+        <script type="text/javascript" src="../bower_components/angular-ui-router.stateHelper/statehelper.js"></script>
+        <script type="text/javascript" src="libs/jquery.ui.addresspicker.js"></script>
+        <script type="text/javascript" src="libs/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- endbuild -->
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
+        
+        <!-- alpaca -->
+        <link type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css" rel="stylesheet"/>
+        <link type="text/css" href="//code.cloudcms.com/alpaca/1.5.11/bootstrap/alpaca.min.css" rel="stylesheet"/>
+        <script type="text/javascript" src="//code.cloudcms.com/alpaca/1.5.11/bootstrap/alpaca.min.js"></script>
+
+        <!-- build:js({.tmp,.tmp/partials,src}) scripts/app.js -->
+        <!-- inject:js -->
+        <script src="app/index.js"></script>
+        <script src="app/settings/settings.routes.js"></script>
+        <script src="app/settings/settings.controller.js"></script>
+        <script src="app/settings/settings-properties.controller.js"></script>
+        <script src="app/settings/settings-payments.controller.js"></script>
+        <script src="app/settings/settings-packages.controller.js"></script>
+        <script src="app/settings/settings-languages.controller.js"></script>
+        <script src="app/settings/settings-analytics.controller.js"></script>
+        <script src="app/settings/settings-admins.controller.js"></script>
+        <script src="app/settings/settings-admin-create.controller.js"></script>
+        <script src="app/settings/payment-method.controller.js"></script>
+        <script src="app/regions/regions.routes.js"></script>
+        <script src="app/regions/regions.controller.js"></script>
+        <script src="app/regions/regions-edit.controller.js"></script>
+        <script src="app/regions/regions-create.controller.js"></script>
+        <script src="app/prospects/prospects.routes.js"></script>
+        <script src="app/prospects/prospects.controller.js"></script>
+        <script src="app/properties/property-list.controller.js"></script>
+        <script src="app/properties/property-edit.pricing.controller.js"></script>
+        <script src="app/properties/property-edit.images.controller.js"></script>
+        <script src="app/properties/property-edit.general.controller.js"></script>
+        <script src="app/properties/property-edit.features.controller.js"></script>
+        <script src="app/properties/property-edit.description.controller.js"></script>
+        <script src="app/properties/property-edit.controller.js"></script>
+        <script src="app/properties/property-edit.address.controller.js"></script>
+        <script src="app/properties/property-create.controller.js"></script>
+        <script src="app/properties/properties.routes.js"></script>
+        <script src="app/properties/properties.controller.js"></script>
+        <script src="app/pages/pages.routes.js"></script>
+        <script src="app/pages/pages.controller.js"></script>
+        <script src="app/pages/pages-edit.controller.js"></script>
+        <script src="app/pages/pages-create.controller.js"></script>
+        <script src="app/navigation/navigation.routes.js"></script>
+        <script src="app/navigation/navigation.controller.js"></script>
+        <script src="app/navigation/navigation-links.controller.js"></script>
+        <script src="app/navigation/navigation-edit.controller.js"></script>
+        <script src="app/navigation/navigation-create.controller.js"></script>
+        <script src="app/members/members.controller.js"></script>
+        <script src="app/members/members-edit.controller.js"></script>
+        <script src="app/members/members-create.controller.js"></script>
+        <script src="app/members/member.routes.js"></script>
+        <script src="app/languages/languages.routes.js"></script>
+        <script src="app/languages/languages.controller.js"></script>
+        <script src="app/languages/languages-edit.controller.js"></script>
+        <script src="app/auth/loginModal.controller.js"></script>
+        <script src="app/auth/auth.routes.js"></script>
+        <script src="app/auth/auth.controller.js"></script>
+        <script src="components/sidebar/sidebar.controller.js"></script>
+        <script src="components/navbar/navbar.controller.js"></script>
+        <script src="components/auth/auth.service.js"></script>
+        <script src="app/services.js"></script>
+        <script src="app/main.controller.js"></script>
+        <script src="app/directives.js"></script>
+        <!-- endinject -->
+
+        <!-- inject:partials -->
+        <!-- angular templates will be automatically converted in js and inserted here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+
+    </body>
+</html>

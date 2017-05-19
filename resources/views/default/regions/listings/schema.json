@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"location": {
+			"title": "Location (lat,lng)",
+			"type": "string"
+		},
+		"radius": {
+			"title": "Radius",
+			"type": "string"
+		},
+		"listing_type": {
+			"title": "Sale/Rent",
+			"type": "string",
+			"enum": ["sale", "rent", ""]
+		},		
+		"property_types": {
+			"title": "Property types",
+			"description": "e.g. Terraced, Houses (please visit your property types for a list you can use)",
+			"type": "string"
+		},
+		"property_conditions": {
+			"title": "Condition",
+			"type": "string",
+			"enum": ["new", "pre_owned", "not_specified"]
+		},
+		"sort_type": {
+			"title": "Sort type",
+			"type":"string",
+			"enum": ["highest_price", "lowest_price", "most_recent"]
+		},
+		"is_featured": {
+			"title": "Featured property?",
+			"type":"boolean"
+		}
+	}
+}

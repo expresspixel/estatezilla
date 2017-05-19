@@ -1,0 +1,26 @@
+<table class="table ">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Search criteria type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat-start="(key, row) in list | orderBy:'position':reverse">
+            <td><a href="" style="margin-right: 2px;" ng-click="moveSearchCriteriaType(key, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="moveSearchCriteriaType(key, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+            <td><a href="#"><strong>{{row.name}}</strong></a></td>
+            <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+        </tr>                               
+        <tr ng-repeat-end="(key, row) in list | orderBy:'position':reverse">
+            <td><a href="" style="margin-right: 2px;" ng-click="moveSearchCriteriaType(rowKey, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="moveSearchCriteriaType(rowKey, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+            <td>
+                <input type="text" ng-model="row.name" class="form-control">
+            </td>
+            <td ng-hide="searchCriteriaTypeUpdating"><button type="button" class="btn btn-default" ng-click="updatePropertyType(propertyType, propertyTypeCopy)">Update</button> | <a href="" ng-click="cancelEditPropertyType(propertyType.id)">Cancel</a></td>
+            <td ng-show="searchCriteriaTypeUpdating"><button type="button" class="btn btn-default"><i class="fa fa-refresh fa-spin"></i>  Updating</button></td>
+
+        </tr>
+
+
+    </tbody>
+</table>

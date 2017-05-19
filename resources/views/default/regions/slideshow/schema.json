@@ -1,0 +1,29 @@
+{
+	"type":"array",
+	"default": [
+			{"title": "Title 1"},
+			{"title": "Title 2"},
+			{"title": "Title 3"}
+	],
+	"items": {
+		"type": "object",
+		"properties": {
+			"title": {
+				"title": "Title",
+				"type": "string"
+			},
+			"caption": {
+				"title": "Caption",
+				"type": "string"
+			},
+			"image": {
+				"title": "Image",
+				"type": "string"
+			},
+			"url": {
+				"title": "URL",
+				"type": "string"
+			}
+		}
+	}
+}

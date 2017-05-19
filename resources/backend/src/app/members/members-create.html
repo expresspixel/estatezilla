@@ -1,0 +1,132 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Adding new member</h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Salutation</label>
+                    <select ng-model="member.gender" class="form-control">
+                        <option value="male">Mr</option>
+                        <option value="female">Mrs</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" name="firstname" ng-model="member.firstname" class="form-control" required>
+                    <div ng-messages="form.firstname.$error" ng-if="form.$submitted" ng-messages-include="my-messages"></div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" name="lastname" ng-model="member.lastname" class="form-control" required>
+                    <div ng-messages="form.lastname.$error" ng-if="form.$submitted" ng-messages-include="my-messages"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" name="email" ng-model="member.email" class="form-control" ng-required="true" ng-pattern="/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/" server-error>
+                    <div ng-messages="form.email.$error" ng-if="form.$submitted" ng-messages-include="my-messages">
+                        <p ng-message="server" class="help-block">{{ errors.email }}</p>
+                    </div>                    
+                    <!--<p ng-show="form.email.$invalid && form.$submitted" class="help-block">Please enter a valid email</p>
+                    <p ng-show="form.email.$error.server && form.$submitted" class="help-block">{{ errors.email }}</p>-->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Phone (optional)</label>
+                    <input type="text" ng-model="member.phone" class="form-control">
+                </div>
+            </div>
+        </div>  
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Notes (optional)</label>
+                    <textarea class="form-control" ng-model="member.about"></textarea>
+                </div>
+            </div>
+
+        </div>            
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" ng-model="member.username" class="form-control" name="username" server-error>
+                    <p ng-show="form.username.$invalid && form.$submitted" class="help-block">{{ errors.username }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" ng-model="member.password" class="form-control" server-error>
+                    <p ng-show="form.password.$error.server && form.$submitted" class="help-block">{{ errors.password }}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Confirm password</label>
+                    <input type="password" name="password_confirmation" ng-model="member.password_confirmation" class="form-control" ng-match="member.password" server-error>
+                    <p ng-show="form.password_confirmation.$error.match && form.$submitted" class="help-block">Passwords must match</p>
+                    <p ng-show="form.password_confirmation.$error.server && form.$submitted" class="help-block">{{ errors.password_confirmation }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="member.is_advertiser"> Member is an estate agent/advertiser
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="member.is_seller"> Member is a non-professional seller/landlord
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" ng-model="member.is_prospect"> Member is a prospective buyer
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="dismiss()">Close</button>
+        <button type="submit" class="btn btn-primary">Save member</button>
+    </div>
+    </div><!-- /.modal-content -->
+</form>
+
+<script type="text/ng-template" id="my-messages">
+    <p ng-message="required" class="help-block">This field is required</p>
+    <p ng-message="minlength" class="help-block">Input too short</p>
+    <p ng-message="email" class="help-block">This field must be an email</p>
+</script>

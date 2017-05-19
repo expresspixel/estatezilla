@@ -1,0 +1,163 @@
+
+<div class="container-fluid no-padding">			
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">	
+                
+
+                <br />
+                <div class="row">
+                    <div class="col-md-8">  
+                        <h3>Pages</h3>
+                    </div>
+                    <div class="col-md-4">	
+                        <br />
+                        <form class="form-inline pull-right" ng-submit="performSearch()">
+
+                            <div class="form-group">
+                                <div class="left-inner-addon ">
+                                    <i class="fa fa-search"></i>
+                                    <input type="text" class="form-control" ng-model="search"  placeholder="Search for a page..." />
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-default">Search</button>
+                        </form>
+                    </div>
+
+                </div>
+                <br />
+
+
+                <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                    <div class="col-md-9">	
+                        <form class="form-inline pull-left">
+
+                            <!--<div class="form-group">
+
+<select name="action" class="form-control">
+<option selected="selected" value="-1">Bulk Actions</option>
+<option value="delete">Hide</option>
+<option value="delete">Delete</option>
+</select>
+<button type="submit" class="btn btn-default">Submit</button>
+
+</div>  
+
+<div class="form-group" style="padding-right: 10px; padding-left: 10px;">|</div>  -->                              
+
+                            <div class="form-group">
+
+                                <p class="form-control-static" style="float: left; margin-right: 5px">Sort by : </p>
+
+                                <select name="action" class="form-control" style="max-width: 175px" ng-model="sort" ng-options="sortOption as sortOption.name for sortOption in sortOptions" ng-change="performSearch()">
+                                </select>
+
+                            </div>                                
+                            <div class="form-group" style="padding-right: 10px; padding-left: 10px;">|</div>                                
+                            <div class="form-group">
+
+                                <p class="form-control-static" style="float: left; margin-right: 5px">Show only : </p>
+                                <select name="action" class="form-control" ng-model="currentLocale" ng-change="changeLocale()" style="max-width: 150px" ng-options="localeChoice.code as localeChoice.name for localeChoice in localesList">
+                                </select>
+
+                            </div>
+                            <div class="form-group" style="padding-right: 10px; padding-left: 10px;">|</div>  
+
+                            <div class="form-group">
+
+                                <a class="btn btn-default btn-new" ui-sref="app.pages.create"><i class="fa fa-plus"></i> Add a new page</a>
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+
+                    <div class="col-md-3">	
+                        <div class="pull-right" style="margin-top: 0px;">	
+                            <pagination style="margin-top: 0px;  margin-bottom: 0; " total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="false" rotate="false" num-pages="numPages"  ng-change="pageChanged()"></pagination>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <!--<th style="width: 20px;"><input type="checkbox" /></th>-->
+                            <th class="col-md-9 sorter" ng-click="tableSort('title')" table-sorter info="{ name: 'title', sort: sort }">Title</th>
+                            <th style="width: 40px;" ng-repeat="localeChoice in localesList">{{localeChoice.code.toUpperCase()}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="page in pagesList" style="height: 60px">
+                            <!--<td><input type="checkbox" /></td>-->
+                            <td>
+                                <a ui-sref="app.pages.edit({pageId: page.page_id, locale: currentLocale})"><strong>{{page.title}}</strong></a> <a ng-click="deletePage(page)" class="delete-link muted" href=""><small>(Delete)</small></a> <br />
+                                <p>{{ page.seo_meta_description != '' ? page.seo_meta_description  : " -- no meta description -- " }} <span class="text-italic">Last modified: {{page.last_modified}}</span></p>
+                            </td>
+                            <td ng-repeat="localeChoice in localesList" style="vertical-align: middle">
+                                
+                                <div style="line-height: 80px">
+                                    <a ui-sref="app.pages.edit({pageId: page.page_id, locale: localeChoice.code})" class="locale-status" ng-class="{'locale-info': page.translated[localeChoice.code]}">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                </div>
+
+                                
+                                <!--<div style="line-height: 80px" ng-repeat="translation in page.translations" style="text-align: center">
+
+                                    <div ng-switch on="localeChoice.code">
+                                        <a ng-switch-when="translation.locale == localeChoice.code && translation.visibility == 'VISIBLE'" ui-sref="app.pages.edit({pageId: page.page_id, locale: localeChoice.code})" class="locale-status locale-info"><i class="fa fa-file-text"></i></a>
+
+                                    <a ng-switch-default ui-sref="app.pages.edit({pageId: page.page_id, locale: localeChoice.code})" class="locale-status locale-warning"><i class="fa fa-file-text"></i></a>
+                                    </div>
+                                    
+
+                                </div>-->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br />
+                <div class="pagination-text">Showing {{pageInfo.from}} - {{pageInfo.to}} <small>of {{pageInfo.total}}</small></div>
+                <nav class="disabled">
+
+
+
+                </nav>
+
+            </div>
+
+        </div>			
+        <br />
+        <br />
+
+    </div>
+</div>
+
+
+</div>
+
+<script type="text/ng-template" id="table-sorter.html">
+    <span ng-transclude></span>
+    <a href="" class="" ng-show="info.sort.field != info.name"></a>
+    <a href="" class="asc" ng-show="info.sort.direction == 'asc' && info.sort.field == info.name"><i class="fa fa-sort-asc"></i></a>
+    <a href="" class="desc" ng-show="info.sort.direction == 'desc' && info.sort.field == info.name"><i class="fa fa-sort-desc"></i></a>
+</script>
+
+<script type="text/ng-template" id="locale-icon.html">
+    <span ng-transclude></span>
+    <a href="" class="" ng-show="info.sort.field != info.name"></a>
+    <a href="" class="asc" ng-show="info.sort.direction == 'asc' && info.sort.field == info.name"><i class="fa fa-sort-asc"></i></a>
+    <a href="" class="desc" ng-show="info.sort.direction == 'desc' && info.sort.field == info.name"><i class="fa fa-sort-desc"></i></a>
+</script>
+

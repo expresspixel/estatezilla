@@ -1,0 +1,22 @@
+{
+		"fields": {
+			"quote_text": {
+				"type": "text"
+			},
+			"links": {
+				"collapsed": true,
+				"animate": false,
+				"toolbarSticky": true,
+				"toolbarStyle": "link",
+				"min": 3,
+				"max": 3,
+				"items": {
+					"fields": {
+						"caption": {
+							"type": "text"
+						}
+					}
+				}
+			}
+		}
+}

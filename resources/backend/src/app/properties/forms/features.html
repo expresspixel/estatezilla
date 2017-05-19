@@ -1,0 +1,25 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-chevron-right"></i> Property features</div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-xs-3" ng-repeat="feature in features">
+                    <label>Feature #{{$index+1}}</label>
+                    <input type="text" class="form-control" placeholder="" ng-model="feature.value">
+                </div>							
+
+            </div>	
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" ng-hide="saving" class="btn btn-primary pull-right">Save</button>
+                    <button type="button" ng-show="saving" class="btn btn-primary pull-right">Saving...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" ng-app="ngAdmin">
+    <head>
+        <meta charset="utf-8">
+        <title>Adminstrator - estatezilla</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		
+        <link rel="stylesheet" href="styles/vendor-cdff252b.css">
+
+        <link rel="stylesheet" href="styles/app-9b2254e1.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    </head>
+    <body class="{{pageClass}}">
+        <!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+        <div ui-view></div>
+		
+			<div id="main-loader" class="ui-ios-overlay" style="display: none;">
+		<i class="fa fa-circle-o-notch fa-spin"></i> <span class="title">Loading...</span>
+	</div>
+	
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                                                                    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                                   e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                                   e.src='//www.google-analytics.com/analytics.js';
+                                   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script> 
+		
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.9/ace.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+		<script src="//cdn.ckeditor.com/4.5.2/standard/ckeditor.js"></script>
+
+        <script src="scripts/vendor-ca19e12f.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
+        
+        <!-- alpaca -->
+        <link type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css" rel="stylesheet"/>
+        <link type="text/css" href="//code.cloudcms.com/alpaca/1.5.11/bootstrap/alpaca.min.css" rel="stylesheet"/>
+        <script type="text/javascript" src="//code.cloudcms.com/alpaca/1.5.11/bootstrap/alpaca.min.js"></script>
+
+        <script src="scripts/app-84538ef2.js"></script>
+
+    </body>
+</html>

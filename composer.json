@@ -1,0 +1,63 @@
+{
+	"name": "expresspixel/estatezilla",
+	"description": "The EstateZilla CMS.",
+	"keywords": ["estatezilla", "laravel", "cms"],
+	"license": "GPL-2.0+",
+	"type": "project",
+	"require": {
+		"laravel/framework": "5.0.*",
+		"illuminate/html": "5.*",
+		"lucadegasperi/oauth2-server-laravel": "4.0.x@dev",
+		"barryvdh/laravel-cors": "0.7.x",
+		"intervention/image": "~2.1",
+		"intervention/imagecache": "~2.1",
+		"caffeinated/menus": "~1.0",
+		"caffeinated/modules": "~1.0",
+		"wikimedia/composer-merge-plugin": "dev-master",
+		"dimsav/laravel-translatable": "~5.0",
+		"igaster/laravel-theme": "1.0.13",
+		"arrilot/laravel-widgets": "3.4.2",
+		"laravelba/route-binder": "3.0.0",
+		"anlutro/l4-settings": "dev-master",
+		"cocur/slugify": "^1.2",
+		"gettext/gettext": "3.6.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.0",
+		"phpspec/phpspec": "~2.1",
+		"xethron/migrations-generator": "^2.0"
+	},
+	"autoload": {
+		"classmap": [
+			"database"
+		],
+		"psr-4": {
+			"App\\": "app/"
+		},
+		"files": [
+			"app/Support/helpers.php"
+        ]
+	},
+	"autoload-dev": {
+		"classmap": [
+			
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php -r \"copy('.env.example', '.env');\"",
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	}
+}

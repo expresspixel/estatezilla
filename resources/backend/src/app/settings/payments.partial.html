@@ -1,0 +1,55 @@
+<div ui-tree-handle class="panel panel-default tree-node tree-node-content" ng-controller="PaymentMethodCtrl">
+    
+    <div class="panel-heading" ng-class="{active: !isCollapsed}">
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-6" >
+            <div nodrag>
+                <a href="" ng-click="isCollapsed = !isCollapsed"><i ng-hide="isCollapsed" class="fa fa-minus" ></i></a>
+                <a href="" ng-click="isCollapsed = !isCollapsed"><i ng-show="isCollapsed" class="fa fa-plus" ></i></a>
+                <span style="cursor: pointer" ng-click="isCollapsed = !isCollapsed">&nbsp;&nbsp;&nbsp;{{paymentMethod.name}}&nbsp;</span> (<a href="" ng-show="paymentMethod.status == 1" ng-click="paymentMethod.status = 0" class="real-link">Disable</a><a href="" ng-show="paymentMethod.status == 0" ng-click="paymentMethod.status = 1" class="real-link">Enable</a>)
+            </div>		
+            </div>		
+            <div class="col-md-3 pull-right " >
+
+                        <div class="status-enabled pull-right" ng-show="paymentMethod.status != 0"><i class="fa fa-check"></i>&nbsp;&nbsp;Enabled</div>
+                        <div class="status-disabled pull-right" ng-show="paymentMethod.status == 0"><i class="fa fa-circle"></i>&nbsp;&nbsp;Disabled</div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="panel-body" nodrag ng-show="isCollapsed">
+        
+        <form class="form-horizontal ng-pristine ng-valid" ng-submit="savePaymentMethod(paymentMethod)">
+
+            <ng-include src="'app/settings/payment-methods/'+paymentMethod.handle+'.html'"></ng-include>
+
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="muted delete-link"><i class="fa fa-times"></i> Delete</a>
+                </div>           
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary pull-right" ng-show="paymentMethod.saving">Saving...</button>
+                    <button type="submit" class="btn btn-primary pull-right" ng-hide="paymentMethod.saving">Save changes</button>
+                </div>
+            </div>
+            
+        </form>
+        
+    </div>
+</div>
+
+<ol ui-tree-nodes="" ng-model="paymentMethod.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="paymentMethod in paymentMethod.nodes" ui-tree-node ng-include="'app/settings/payments.partial.html'">
+    </li>
+</ol>

@@ -1,0 +1,74 @@
+<div class="container-fluid no-padding">      
+
+    <div class="container-fluid main-content">
+
+
+        <div class="row">
+            <div class="col-md-12">  
+                <br />
+                <h3>Settings</h3>
+                <br /><br />
+                <div ng-include="'app/settings/navbar.html'"></div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="row">
+
+
+                    <div class="col-md-8" >  
+
+                        <div style="border-right: 1px solid #e2e2e2; padding-right: 40px">  
+                            
+                        <div ui-tree callbacks="treeOptions" id="tree-root">
+                            <ol ui-tree-nodes ng-model="paymentMethods">
+                                <li ng-repeat="paymentMethod in paymentMethods" ui-tree-node ng-include="'app/settings/payments.partial.html'"></li>
+                            </ol>
+                        </div>
+                        
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">  
+                        <div class="well">  
+                            <h4>Payment methods</h4>
+                            <p>Select the payment methods you want to enable, drag-and-drop to save the order and edit credentials and details.</p>
+                        </div>   
+                    </div>   
+
+
+                </div>   
+
+
+
+            </div>                      
+            <br />
+            <hr />
+            <br />
+
+        </div>      
+        <br />
+        <br />
+
+
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+

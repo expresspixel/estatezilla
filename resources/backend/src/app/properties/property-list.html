@@ -1,0 +1,197 @@
+<div class="sticky-bar" style="">
+    <br />
+	
+    <div class="row search-property padding-container" style="">
+        <div class="col-lg-12 col-xs-12">	
+            <form class="form-inline" ng-submit="performSearch()">
+                <div class="row">
+                    <div class="col-xs-9">
+                        <div class="form-group"  style="width: 100%;">
+                            <div class="left-inner-addon ">
+                                <i class="fa fa-search"></i>
+                                <input type="text" class="form-control" style="width: 100%;" ng-model="search"  placeholder="Find a property..." />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+
+                        <button type="submit" class="btn btn-default btn-block">Go</button>
+
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-xs-9">  
+
+            <p class="form-control-static" style="margin: 9px 0;" ng-init="additional_search = false">
+                <a href="" ng-click="additional_search = true" ng-hide="additional_search"><i class="fa fa-angle-double-down"></i> Additional options</a>
+                <a href="" ng-click="additional_search = false" ng-show="additional_search"><i class="fa fa-angle-double-up"></i> Additional options</a>
+            </p>
+            
+        </div>
+        <div class="col-xs-3 pull-right">
+            
+            <ul class="pagination pagination-sm pull-right">
+                <li><a ng-show="false"><span aria-hidden="true"><i class="fa-li fa fa-spinner fa-spin"></i></span></a></li>
+                <li ng-hide="pageInfo.total <= pageInfo.per_page"><a href="" ng-class="{disabled: pageInfo.prev_page == pageInfo.current_page}" ng-click="setPage(pageInfo.prev_page)" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-chevron-left"></i></span></a></li>
+                <li ng-hide="pageInfo.total <= pageInfo.per_page"><a href="" ng-class="{disabled: pageInfo.next_page == pageInfo.current_page}" ng-click="setPage(pageInfo.next_page)" aria-label="Next"><span aria-hidden="true"><i class="fa fa-chevron-right"></i></span></a></li>
+            </ul>
+
+
+        </div>
+
+
+        <div class="col-md-12" style="display: none;">	
+
+            <p style="font-weight: normal; font-style: italic; margin-top: 12px; font-size: 10px;">Category: House; Min price: 5,000 GBP</p>
+
+        </div>
+
+    </div>
+
+    <form class="padding-container" ng-show="additional_search" ng-submit="submitForm()">
+        <br />
+        <div class="row form-vertical">
+
+            <div class="col-sm-6">
+
+                <div class="form-group">
+
+                    <select class="form-control" ng-model="searchParams.property_type_id" ng-options="propertyType.id as propertyType.name for propertyType in propertyTypes">
+                        <option value="" selected="selected">Any property type</option>
+                    </select>
+
+                </div>
+
+            </div>
+            <div class="col-sm-6">	
+
+                <div class="form-group">
+                    <select class="form-control" ng-model="searchParams.listing_type" ng-options="listing_type.value as listing_type.name for listing_type in searchOptions.listing_types" ng-init="searchParams.listing_type=null">
+                    </select>
+                </div>
+
+            </div>
+        </div>	
+        <div class="row">						  
+            <div class="col-sm-6">	
+
+                <div class="form-group">
+                    <select class="form-control" ng-model="searchParams.min_beds" ng-options="min_bed.value as min_bed.name for min_bed in searchOptions.min_beds" ng-init="searchParams.min_beds=null">
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-sm-6">	
+
+                <div class="form-group">
+                    <select class="form-control" ng-model="searchParams.max_beds" ng-options="max_bed.value as max_bed.name for max_bed in searchOptions.max_beds" ng-init="searchParams.max_beds=null">
+                    </select>
+                </div>
+
+            </div>
+
+
+        </div>	
+
+        <div class="row" >						  
+            <div class="col-sm-6">	
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon hidden-sm hidden-md">Min</span>
+                        <input type="text" placeholder="Min price" ng-model="searchParams.min_price" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-addon">{{settings.currency}}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6">	
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon hidden-sm hidden-md">Max</span>
+                        <input type="text" placeholder="Max price" ng-model="searchParams.max_price" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-addon">{{settings.currency}}</span>
+                    </div>
+                </div>
+
+            </div>		
+
+        </div>
+
+        <div class="row" style="padding-bottom: 10px; border-bottom: 2px solid #d2d2d2">						  
+
+            <div class="col-sm-12">	
+
+                <button type="submit" ng-hide="listLoader" class="btn btn-primary">Update</button>
+                <button type="button" ng-show="listLoader" class="btn btn-primary">Updating...</button>
+
+
+            </div>		
+
+        </div>
+    </form>
+
+
+    <div class="row properties-bar padding-container">						  
+
+        <div class="col-xs-8">
+            <p>Showing {{pageInfo.from}}-{{pageInfo.to}} of {{totalItems}} properties</p>
+        </div>
+
+        <div class="col-xs-4">	
+            <p><a href="" ng-click="addNewProperty()" class="add-property pull-right"><i class="fa fa-plus"></i> Add new</a></p>
+        </div>		
+
+    </div>
+
+    <div class="listings-scroller">
+
+        <div class="row loading-row" ng-show="listLoader">
+            <div class="col-xs-12">
+                <i class="fa fa-refresh fa-spin"></i> Loading...
+            </div>
+        </div>
+
+        <div class="listings-scrollpane">
+
+            <div id="scroller" ng-class="{'scrollable':!isMobile}">
+                <div class="content">
+
+                    <div class="row listings-row" ng-show="!listLoader && propertiesList.length == 0">
+						 <div class="col-xs-12">
+							 <p class="text-center">No properties found.</p>
+						 <p class="text-center"><a href="" ng-click="addNewProperty()" class="btn btn-danger btn-xs" style="padding-left: 10px; padding-right: 10px"><i class="fa fa-plus"></i> Add a new property</a></p>
+						</div>
+					</div>
+					
+                    <div class="row listings-row" ui-sref="app.properties.edit({propertyId: property.id})" ng-click="preloadContent(property.id)" ng-repeat="property in propertiesList" ng-class="{'active':propertyId == property.id}">
+
+                        <div class="col-md-4 col-lg-3 col-xs-4">
+                            <a class="thumbnail" ui-sref="app.properties.edit({propertyId: property.id})"><img src="{{property.main_image}}" alt=""></a>
+							 <a class="muted delete-link" href="" ng-click="deleteProperty(property);$event.stopPropagation()"><i class="fa fa-remove"></i> Delete</a>
+                        </div>	 
+
+                        <div class="col-md-8 col-lg-9 col-xs-8">
+                            <div class="property-summary">
+                                <a ui-sref="app.properties.edit({propertyId: property.id})"><h3>{{property.title}}</h3></a>
+                                <p ng-show="property.displayable_address">{{property.displayable_address}}</p>
+                                <p ng-show="!property.displayable_address">No address entered</p>
+								
+                                <p class="muted">Price: {{property.price_formatted}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

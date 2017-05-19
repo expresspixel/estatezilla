@@ -1,0 +1,71 @@
+<div class="row" style="margin-top: 120px" ng-hide="propertyLoader || listLoader || propertyId != 0">
+
+    <div class="col-sm-4 col-sm-offset-4 text-center">
+        <i class="fa fa-exclamation" style="font-size: 44px;"></i><br /><br />
+		<p>Sorry, no property found.</p><br />
+    </div>  
+
+</div>
+
+<div class="row" ng-show="propertyLoader || listLoader">
+
+    <div class="col-sm-12 text-center property-loader">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+    </div>  
+
+</div>
+
+<div class="row" ng-hide="propertyLoader || listLoader || propertyId == 0">
+    <div class="col-sm-12">
+
+        <br />
+        <!--<div class="listing-editor" ui-view="editor"></div>-->
+        <div class="row">
+            
+            <div class="col-sm-12" ng-show="isMobile">
+                <a href="" ng-click="hideEditor()"><i class="fa fa-chevron-left"></i> Back</a>
+            </div>  
+            <div class="col-xs-9">
+                <h3 style="margin-top: 15px;">Edit Listing {{property.id}} : "{{translation.title}}"</h3>
+            </div>  
+            <!--<div class="col-sm-3">
+                <div class="btn-group pull-right">
+                    <label class="btn btn-success btn-xs" ng-model="radioModel" btn-radio="'Left'" uncheckable>Visible</label>
+                    <label class="btn btn-success btn-xs" ng-model="radioModel" btn-radio="'Middle'" uncheckable>Hidden</label>
+                </div>
+            </div>-->
+
+            <div class="col-sm-9">
+                <strong>Languages :</strong> <a href="" class="btn btn-default btn-xs" ng-click="switchLocale(localeChoice.code)" ng-repeat="localeChoice in localesList" ng-show="localeChoice.visible == 1" ng-class="{active:currentLocale == localeChoice.code}">{{localeChoice.name}}</a>
+            </div>  
+            <div class="col-sm-3">
+                <div class="pull-right">
+                <div class="btn-group pull-right">
+                    <label class="btn btn-success btn-xs" ng-change='saveVisibility(property.visible)' ng-model="property.visible" btn-radio="1">Visible</label>
+                    <label class="btn btn-success btn-xs" ng-change='saveVisibility(property.visible)' ng-model="property.visible" btn-radio="0">Hidden</label>
+                </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <hr />
+        <br />
+
+        <div ng-include="'app/properties/forms/description.html'" ng-controller="PropertyEditDescriptionCtrl"></div><br />
+        <div ng-include="'app/properties/forms/features.html'" ng-controller="PropertyEditFeaturesCtrl"></div><br />
+        <div ng-include="'app/properties/forms/general.html'" ng-controller="PropertyEditGeneralCtrl"></div><br />
+        <div ng-include="'app/properties/forms/images.html'" ng-controller="PropertyEditImagesCtrl"></div><br />
+        <div ng-include="'app/properties/forms/address.html'" ng-controller="PropertyEditAddressCtrl"></div><br />
+        <div ng-include="'app/properties/forms/pricing.html'" ng-controller="PropertyEditPricingCtrl"></div><br />
+        <!--<div ui-view="description"></div><br />
+        <div ui-view="features"></div><br />
+        <div ui-view="general"></div><br />
+        <div ui-view="images"></div><br />
+        <div ui-view="address"></div><br />-->
+    
+    </div>
+</div>
+
+<!--<div class="listing-editor" ng-include="'app/properties/property-edit.html'"></div>-->

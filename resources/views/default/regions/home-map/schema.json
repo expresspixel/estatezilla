@@ -1,0 +1,25 @@
+{
+	"type": "object",
+	"properties": {
+			"lat": {
+				"title": "Latitude",
+				"default": "54.5260",
+				"type": "string"
+			},
+			"lng": {
+				"title": "Longitude",
+				"default": "-4.2220",
+				"type": "string"
+			},
+			"zoom": {
+				"title": "Zoom level",
+				"default": "5",
+				"type": "string"
+			},
+			"href": {
+				"title": "URL",
+				"default": "map",
+				"type": "string"
+			}
+	}
+}

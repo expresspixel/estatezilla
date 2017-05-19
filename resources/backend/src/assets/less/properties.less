@@ -1,0 +1,368 @@
+#page-content-wrapper.properties {
+    padding: 0px;
+}
+.properties {
+
+    .pagination-sm > li > a {
+        padding: 0;   
+    }
+    h3 {
+        margin: 0;
+        margin-bottom: 10px;
+        color: #242628;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .listings-bar {
+        background: #fff;
+        > div {
+            background: #fff;
+
+        }
+        border-right: 2px solid #fff;
+    }
+    .navbar {
+        margin-bottom: 0;   
+    }
+    a:hover {
+        text-decoration: none;   
+    }
+    .listings-wrapper {
+
+    }
+    h2 {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EDECE4;
+    }
+    .loading-row {
+        text-align: center;
+        font-weight: bold;
+        color: @gray;
+        background: #fff;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #EDECE4;
+    }
+    .listings-row {
+        cursor: pointer;
+        &:hover {
+            background: #F6F6F7;
+        }
+        &.active {
+            background: darken(#F6F6F7, 5%);
+        }
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EDECE4;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+        min-height: 90px;
+        overflow-y: hidden;
+        .thumbnail {
+         width: 85px;   
+         height: 65px;  
+            margin-bottom: 0;
+        }
+        .muted {
+            font-style: italic;
+            font-size: @font-size-small;
+            margin-bottom: 0;
+        }
+        .property-summary {
+            padding-left: 20px;
+        }
+        /*&::after {
+        content: "\f054";
+        size: 16px;
+        color: #000;
+        font-family: "FontAwesome";
+        font-weight: normal;
+        font-style: normal;
+        vertical-align: -10%;
+        text-transform:none;
+        speak: none;
+        line-height: 200px; 
+        height: 200px;
+        position: absolute;
+        right:40px;
+        font-size: 18px;
+        top: 0;
+    }*/
+    }
+
+
+    .search-property {
+        padding-bottom: 0px; border-bottom: 2px solid #d2d2d2
+    }
+
+
+
+
+    .ps-container > .ps-scrollbar-x-rail,
+    .ps-container > .ps-scrollbar-y-rail {
+        opacity: 0.6;
+        margin-top: 4px;
+    }
+    
+    .property-loader {
+        padding-top: 72px;
+        padding-bottom: 72px;
+        i {
+            font-size: 36px;
+        }
+    }
+
+    .properties-bar {
+        padding-bottom: 0px;
+        border-bottom: 2px solid lighten(#e2e2e2, 2%);
+        margin-top: 8px;
+        p {
+            font-style: italic;
+        }
+
+
+        a.add-property {
+            i {
+                color: @gray-dark;
+                /*font-size: 16px;*/
+            }
+            color: @gray-light;
+            &:hover {
+                color: @gray-dark;
+            }
+        }
+    }
+        a.active {
+            font-weight: bold;
+        }
+    
+    
+    
+    //address picker
+    .ui-helper-hidden-accessible {
+     display: none;   
+    }
+    
+    .ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+ 
+  .ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+ 
+    &.ui-state-hover, &.ui-state-active {
+      color: #ffffff;
+      text-decoration: none;
+      background-color: #0088cc;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      background-image: none;
+    }
+  }
+}
+    
+.upload-panel {
+    .nav-tabs > li.active > a {
+        background: #fcfcfc;
+    }
+}
+    
+.add-image-panel {
+    position: relative;
+    margin-bottom: 30px;
+    border: 2px dashed #d2d2d2;
+    height: 193px;
+    .panel-body {
+        text-align: center; color: #b2b2b2; font-weight: bold;
+        i {
+            margin-bottom: 10px;   
+        }
+        button {
+            margin-top: 10px;   
+        }
+        p {
+            margin: 2px;
+            padding: 2px;
+            line-height: 12px;
+            &:first {
+             margin-top: 5px;   
+            }
+        }
+    }
+}
+.image-panel {
+    position: relative;
+    min-height: 195px;
+    margin-bottom: 30px;
+    .close_ico {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url('../assets/images/close_delete_off.png') no-repeat;
+        opacity: 0.2;
+    }
+    &:hover {
+        border-color: darken(@panel-inner-border, 10%);
+        .close_ico {
+            opacity: 1;
+            background: url('../assets/images/close_delete.png') no-repeat;
+        }
+    }
+    
+    .editable-buttons {
+        .btn.btn-default {
+            display: none;
+        }
+    }
+    
+    .editable-wrap {
+        background: #fff;
+        border: 1px solid #d2d2d2;
+        display: inline-block;
+        margin: -8px -20px 0;
+        padding: 2px;
+        white-space: nowrap;
+    }
+}
+
+    
+    
+    
+    
+    
+    
+    
+
+    @media (min-width: @screen-sm-max) {
+        .listings-bar {
+            background: #FAFAFA;
+            > div {
+                background: #FAFAFA;
+
+            }
+            border-right: 2px solid #EDECE4;
+        }
+        .listings-wrapper {
+            display: block;
+            background: #FCFCFC;
+        }
+
+        .listings-scroller {
+            /*overflow-x: hidden;
+            overflow-y: scroll;*/
+            height: 600px;
+            
+        }
+
+    }
+    @media (min-width: @screen-lg-min) {
+        .listings-wrapper {
+            overflow-y: scroll; 
+            overflow-x: hidden;
+            height: 500px; 
+        }
+    }
+    
+    @media (min-width: @screen-md-min) {
+
+        .sticky-bar {
+            /* position: fixed;*/
+        }
+        .padding-container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .listings-bar {
+            margin: 0; 
+            padding-right: 0;
+            padding-left: 0;
+            /*position:fixed;height: 1200px; width: 30%; */
+            > div {
+                height:100%; width: 100%; 
+            }
+        }
+        .listings-wrapper {
+            margin: 0;
+            /*margin-left: 33%;*/
+            padding: 10px 10px 10px 30px;
+        }
+        .listing-editor {
+            padding: 20px;   
+        }
+    }
+
+
+
+}
+
+
+    
+            .container-fluid.properties-wrapper {
+         padding-left: 0px;   
+            padding-right: 0px;
+        }
+    
+    
+
+    @media (min-width: @screen-sm-min) {
+        .container-fluid.properties-wrapper {
+         padding-left: 15px;   
+            padding-right: 15px;
+        }
+        .listings-scroller {
+            position: relative;
+        }
+        .listings-scrollpane {
+            position: absolute;
+            width: 100%;
+            height: 500px;
+        }
+        
+        #scroller { position:relative; margin:0px auto; padding:0px; margin-top: 3px;}
+        #scroller.scrollable { width: 100%; height: 100%; overflow: hidden; height: 74%; overflow-y: scroll; }
+        #scroller .content { width: 100%; height: auto; }
+    }
+
+    @media (min-width: @screen-lg-min) {
+        .container-fluid.properties-wrapper {
+        padding-left: 0px;   
+            padding-right: 0px;
+        }
+    }

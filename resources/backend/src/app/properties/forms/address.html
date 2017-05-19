@@ -1,0 +1,81 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors" autocomplete="off">
+<input autocomplete="false" name="hidden" type="text" style="display:none;">
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-chevron-right"></i> Property address</div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <style>
+                        #map {
+                            border: 1px solid #DDD;
+                            width:100%;
+                            height: 300px;
+                            margin: 10px 0 10px 0;
+                            -webkit-box-shadow: #AAA 0px 0px 15px;
+                        }
+                    </style>
+
+
+                    <div class="row">
+                        <div class="col-xs-12" style="margin-bottom: 11px">
+                            <label>Type in the address</label>
+                            <input type="text" class="form-control" id="addresspicker_map" ng-model="property.displayable_address" autocomplete="false" spellcheck="false">
+                        </div>
+                        <div class="col-xs-4" style="margin-bottom: 11px">
+                            <label>Street no.</label>
+                            <input type="text" class="form-control" id="street_no" ng-model="property.street_no">
+                        </div>
+                        <div class="col-xs-8" style="margin-bottom: 11px">
+                            <label>Street name</label>
+                            <input type="text" class="form-control" id="street_name" ng-model="property.street_name">
+                        </div>
+                        <div class="col-xs-12" style="margin-bottom: 11px">
+                            <label>Town/City</label>
+                            <input type="text" class="form-control" id="city" ng-model="property.city">
+                        </div>
+                        <div class="col-xs-8" style="margin-bottom: 11px">
+                            <label>State/Province/Region</label>
+                            <input type="text" class="form-control" id="region" ng-model="property.region">
+                        </div>
+                        <div class="col-xs-4" style="margin-bottom: 11px">
+                            <label>Postcode/ZIP</label>
+                            <input type="text" class="form-control" id="postcode" ng-model="property.postcode">
+                        </div>
+                        <div class="col-xs-12" style="margin-bottom: 11px">
+                            <label>Country</label>
+                            <input type="text" class="form-control" id="country" ng-model="property.country">
+                            <input type="text" class="form-control" id="lat" ng-model="property.lat" style="display: none">
+                            <input type="text" class="form-control" id="lng" ng-model="property.lng" style="display: none">
+                        </div>
+                    </div><br />
+
+
+
+                </div>
+                <div class="col-sm-6">
+
+
+                    <div class='map-ad-wrapper' style="min-height: 300px">
+
+                        <div id="map"></div>
+                        <div id="legend">Drag and drop the marker to the correct location</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>

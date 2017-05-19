@@ -1,0 +1,146 @@
+<div class="container-fluid no-padding navigation-tree">			
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">	
+                <br />
+
+                <div class="row">
+                    <div class="col-md-1" style="width: auto">  
+                        <h3>Navigation</h3>
+
+
+                    </div>
+                    <div class="col-md-3">  
+
+                    </div>
+                </div>
+
+
+                <div class="row" style="margin-top: 20px; margin-bottom: 0px;">
+                    <div class="col-md-12">	
+
+                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" ng-repeat="menu in menuList" ng-class="{active: menu.handle == selectedMenu.handle}">
+                                <a href="" ng-click="switchMenu(menu)" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">{{menu.name}}</a>
+                            </li>
+                            <li role="presentation"><a href="" ng-click="addNewMenu()" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile"><i class="fa fa-plus"></i> </a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="row slide" style="margin-top: 20px; margin-bottom: 20px;" ng-show="showAdditional">
+                    <div class="col-md-12">
+                        
+                        <form name="form" class="form-inline" ng-submit="updateMenu(form.$valid)" novalidate qn:validate="errors">
+
+                            <div class="form-group">
+                                <p class="form-control-static" style="float: left; margin-right: 5px">Menu name </p>
+                                <input type="text" class="form-control" ng-model="selectedMenu.name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <p class="form-control-static" style="float: left; margin-left: 10px; margin-right: 5px">Handle </p>
+                                <input type="text" class="form-control" ng-model="selectedMenu.handle">
+                                <button type="button" class="btn btn-default" ng-show="updating">Updating...</button>
+                                <button type="submit" class="btn btn-default" ng-hide="updating">Update</button>
+                            </div>                                
+                            
+                            <div class="form-group" style="padding-right: 10px; padding-left: 10px;">|</div>                                
+                            <div class="form-group">
+                                <p class="form-control-static" style="float: left; margin-right: 5px">
+                                    <a href="" ng-click="deleteMenu(selectedMenu)" class="muted delete-link no-underline"><i class="fa fa-times"></i> Delete menu</a>
+                                </p>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+                <div class="row" ng-hide="showAdditional" style="margin-bottom: 20px;">
+                    <div class="col-md-12">
+                        <div class="btn-additional pull-right"><a href="" ng-click="showAdditional = !showAdditional" ><i class="fa fa-angle-double-down"></i> Additional options</a></div>
+                    </div>
+                </div>
+
+                <hr ng-show="showAdditional" style="margin-bottom: 0px;"/>
+
+                <div class="row" ng-show="showAdditional" style="margin-bottom: 20px;">
+                    <div class="col-md-12">
+                        <div class="btn-additional pull-right"><a href="" ng-click="showAdditional = !showAdditional" ><i class="fa fa-angle-double-up"></i> Hide options</a></div>
+                    </div>
+                </div>
+                
+                <div class="row">
+
+                    <div class="col-md-8">
+
+                        <div ui-tree id="tree-root">
+                            <ol ui-tree-nodes="" ng-model="menuData">
+                                <li ng-repeat="link in menuData" ui-tree-node ng-include="'app/navigation/navigation-links.partial.html'"></li>
+                            </ol>
+                        </div>
+                        
+                        
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-md-12">
+                                <a href="" class="add-item" ng-click="addToMenu()"><i class="fa fa-plus-circle"></i> Add menu item</a>
+                            </div>
+                        </div>
+
+                    </div> 
+
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11 pull-right">
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Settings</div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label>Change locale</label>
+                                            <select name="action" class="form-control" ng-model="currentLocale" ng-change="changeLanguage()">
+                                                <option ng-repeat="localeChoice in localesList" value="{{localeChoice.code}}">{{localeChoice.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button type="button" class="btn btn-primary" ng-show="saving">Saving...</button>
+                                        <button type="button" ng-click="saveMenu()" class="btn btn-primary" ng-hide="saving">Save menu</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>											
+            <br />
+
+
+        </div>
+
+    </div>			
+    <br />
+    <br />
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+

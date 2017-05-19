@@ -1,0 +1,38 @@
+<FilesMatch \.php$>
+	#SetHandler php70-cgi
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -Indexes
+    </IfModule>
+
+    RewriteEngine Off
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<FilesMatch "(.php5$|^\.|^artisan$|^composer.lock$|^composer.json$|^package.json$|^phpunit.xml$|^database.sqlite$|^gulpfile.js$|\.md$)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "^index.php$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# you can add this if you want
+# ErrorDocument 403 http://yourdomain

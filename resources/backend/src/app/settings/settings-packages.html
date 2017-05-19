@@ -1,0 +1,145 @@
+
+<div class="container-fluid no-padding">      
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">  
+                <br />
+                <h3>Settings</h3>
+                <br /><br />
+                <div ng-include="'app/settings/navbar.html'"></div>
+
+                <br />
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Credit prices</h4>
+                        <p>Deposits are in {{settings.default_currency}} and are non-refundable.</p>
+                    </div>
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-4">Credits</th>
+                                    <th class="col-md-4">Price ({{settings.default_currency}})</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="(rowKey, package) in packageList | orderBy:'price':reverse" ng-hide="editPackageKey == package.id">
+                                    <td class="col-md-4"><a href="" ng-click="editPackage(package.id)"><strong>{{package.credits}} credits</strong></a></td>
+                                    <td class="col-md-4"><strong>{{package.price | currency: " " }}</strong></td>
+                                    <td><a href="" ng-click="editPackage(package.id)">Edit</a> | <a href="" ng-click="deletePackage(package)">Delete</a></td>
+                                </tr>
+                                
+                                <tr ng-repeat-end="(rowKey, package) in packageList | orderBy:'price':reverse" ng-show="editPackageKey == package.id">
+                                    <td class="col-md-4">
+                                        <input type="text" ng-model="packageCopy.credits" class="form-control">
+                                    </td>                                    
+                                    <td class="col-md-4">
+                                        <input type="text" ng-model="packageCopy.price" class="form-control">
+                                    </td>
+                                   <td ng-hide="packageUpdating"><button type="button" class="btn btn-default" ng-click="updatePackage(package, packageCopy)">Update</button> | <a href="" ng-click="cancelEditPackage(package.id)">Cancel</a></td>
+                                    <td ng-show="packageUpdating"><button type="button" class="btn btn-default"><i class="fa fa-refresh fa-spin"></i>  Updating</button></td>
+                                    
+                                </tr>    
+                                
+                            </tbody>
+                        </table>
+
+                        <form ng-submit="addPackage()">
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Credits</label><br />
+                                        <input type="text" class="form-control" ng-model="newPackage.credits">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Price</label><br />
+                                        <input type="text" class="form-control" ng-model="newPackage.price">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label><br />
+                                        <button type="submit" class="btn btn-default" ng-hide="savingPackage">Add new</button>
+                                        <button type="button" class="btn btn-default" ng-show="savingPackage">Saving...</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>  
+
+
+                        </form>
+                        
+                        <br />
+                        <hr />
+                        <br />
+
+                        <h4>Monthly subscription</h4>
+                        <form ng-submit="saveMonthlyPackage()">
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Credits</label><br />
+                                        <p class="form-control-static">Unlimited</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Price</label><br />
+                                        <input type="text" class="form-control" ng-model="monthlyPackage.price">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label><br />
+                                        <button type="submit" class="btn btn-default" ng-hide="savingMonthlyPackage">Save</button>
+                                        <button type="button" class="btn btn-default" ng-show="savingMonthlyPackage">Saving...</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>  
+
+
+                        </form>
+                        
+                    </div>                       
+
+
+                </div>   
+                
+            </div>      
+
+
+
+
+        </div>
+    </div>
+</div>
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+
+

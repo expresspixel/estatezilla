@@ -1,0 +1,144 @@
+
+
+<div class="row">
+
+
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Salutation</label>
+            <select ng-model="member.gender" class="form-control">
+                <option value="male">Mr</option>
+                <option value="female">Mrs</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>First name</label>
+            <input type="text" name="firstname" ng-model="member.firstname" class="form-control"  server-error>
+            <span ng-show="form.firstname.$error.server">{{errors.firstname}}</span>
+
+            <div ng-messages="form.firstname.$error" ng-if="form.$submitted" ng-messages-include="my-messages"></div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="form-group">
+            <label>Last name</label>
+            <input type="text" name="lastname" ng-model="member.lastname" class="form-control" server-error>
+
+            <span ng-show="form.lastname.$error.server">{{errors.lastname}}</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" ng-model="member.username" class="form-control">
+        </div>
+    </div>    
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Email address</label>
+            
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-envelope" /></div>
+            <input type="text" ng-model="member.email" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Phone</label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-phone" /></div>
+                <input type="text" ng-model="member.phone" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Mobile</label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-mobile" /></div>
+                <input type="text" ng-model="member.mobile" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Fax</label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-fax" /></div>
+                <input type="text" ng-model="member.fax" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Website</label>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-globe" /></div>
+                <input type="text" ng-model="member.website" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>About</label>
+            <textarea class="form-control" ng-model="member.about" rows="6"></textarea>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row" ng-show="!changePassword">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Password</label>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" disabled value="XXXXXXXXX" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <p class="form-control-static"><a href="" ng-click="changePassword = true">Change password</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                            
+
+<div class="row" ng-show="changePassword">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>New password</label>
+            <input type="password" ng-model="member.password" class="form-control">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Confirm new password</label>
+            <input type="password" ng-model="member.password_confirmation" class="form-control">
+        </div>
+    </div>
+</div>
+
+

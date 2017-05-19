@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-09 10:54+0100\n"
+"PO-Revision-Date: 2015-08-09 10:54+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.4\n"
+"Last-Translator: \n"
+"Language: en\n"
+
+#: strings.php:3
+msgid "per_week"
+msgstr "per week"
+
+#: strings.php:4
+msgid "per_month"
+msgstr "per month"
+
+#: strings.php:5
+msgid "per_person"
+msgstr "per person"
+
+#: strings.php:6
+msgid "per_room"
+msgstr "per room"
+
+#: Http/Controllers/ContactController.php:113
+#: Http/Controllers/ContactController.php:115
+msgid "Message from "
+msgstr ""
+
+#: Http/Controllers/ContactController.php:118
+msgid "Thanks for your message. We'll get back to you shortly."
+msgstr ""
+
+#: Http/Controllers/LandingController.php:47
+msgid "Choose your language"
+msgstr ""
+
+#: Http/Controllers/ListingsController.php:212
+msgid "Highest price"
+msgstr ""
+
+#: Http/Controllers/ListingsController.php:213
+msgid "Lowest price"
+msgstr ""
+
+#: Http/Controllers/ListingsController.php:214
+msgid "Most recent"
+msgstr ""
+
+#: Http/Controllers/PropertyController.php:97
+#, php-format
+msgid "Message from %s visitor"
+msgstr ""
+
+#: Http/Controllers/PropertyController.php:133
+msgid "Save property"
+msgstr ""
+
+#: Http/Controllers/PropertyController.php:133
+msgid "Remove saved property"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:127
+msgid "This area only"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:128
+msgid "Within &frac14; mile"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:129
+msgid "Within &frac12; mile"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:130
+#: Http/Controllers/SiteController.php:131
+#: Http/Controllers/SiteController.php:132
+#: Http/Controllers/SiteController.php:133
+#: Http/Controllers/SiteController.php:134
+#: Http/Controllers/SiteController.php:135
+#: Http/Controllers/SiteController.php:136
+#: Http/Controllers/SiteController.php:137
+#, php-format
+msgid "Within %s mile"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:140
+#: Http/Controllers/SiteController.php:158
+#: Http/Controllers/SiteController.php:196
+msgid "No min"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:148
+#: Http/Controllers/SiteController.php:163
+#: Http/Controllers/SiteController.php:204
+msgid "No max"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:170
+msgid "Anytime"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:171
+msgid "Last 24 hours"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:172
+msgid "Last 3 days"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:173
+msgid "Last 7 days"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:174
+msgid "Last 14 days"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:178
+msgid "Any"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:184
+msgid "New"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:185
+msgid "Pre-owned"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:188
+msgid "Has parking"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:189
+msgid "Has garden"
+msgstr ""
+
+#: Http/Controllers/SiteController.php:190
+msgid "Investment property"
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:32
+msgid "Property link : "
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:33
+msgid "Property reference : "
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:64
+msgid "Please enter your name"
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:65
+msgid "Please enter your email"
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:66
+msgid "Please enter your friend's name"
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:67
+msgid "Please enter your friend's email"
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:92
+#, php-format
+msgid "%s shared a property with you"
+msgstr ""
+
+#: Http/Controllers/TellFriendController.php:99
+msgid "You've successfully sent this message to your friend"
+msgstr ""
+
+#: Http/Controllers/User/AccountController.php:53
+msgid "Password changed successfully!"
+msgstr ""
+
+#: Http/Requests/User/CreateAdvertRequest.php:56
+#: Http/Requests/User/EditAdvertRequest.php:60
+#, php-format
+msgid "You must enter the description for the  '%s' language"
+msgstr ""
+
+#: Http/Requests/User/CreateAdvertRequest.php:57
+#: Http/Requests/User/CreateAdvertRequest.php:58
+#: Http/Requests/User/EditAdvertRequest.php:61
+#: Http/Requests/User/EditAdvertRequest.php:62
+msgid "Invalid address"
+msgstr ""
+
+#: Http/Requests/User/CreateAdvertRequest.php:59
+#: Http/Requests/User/EditAdvertRequest.php:63
+msgid "Please make sure the terms and conditions are accepted"
+msgstr ""
+
+#: Models/Property.php:122
+msgid "POA"
+msgstr ""
