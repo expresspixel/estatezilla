@@ -1,0 +1,8 @@
+{
+	"name": "Master",
+	"slug": "master",
+	"version": "1.0",
+	"description": "This is the description for the Master module.",
+	"order": 9999,
+	"enabled": true
+}

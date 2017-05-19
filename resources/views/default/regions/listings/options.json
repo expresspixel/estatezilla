@@ -1,0 +1,31 @@
+{
+		"fields": {
+			"location": {
+				"placeholder": "lat,lng"
+			},			
+			"property_types": {
+				"multiple": true,
+				"type": "select",
+				"validate": false,
+				"dataSource": "http://intellistreet.dev/api/property-types"
+			},
+			"listing_type": {
+				"type": "select",
+				"optionLabels": ["Sale", "Rent", "Any"]
+			},			
+			"sort_type": {
+				"type": "select",
+				"optionLabels": ["Highest price", "Lowest price", "Most recent"]
+			},
+			"property_conditions": {
+				"type": "select",
+				"multiple": true,
+				"validate": false,
+				"optionLabels": ["New", "Pre-owned", "Not specified"]
+			},
+			"is_featured": {
+				 "type": "checkbox"
+			}
+		}
+
+}

@@ -1,0 +1,20 @@
+<div ui-view></div>
+<div class="container-fluid " >			
+
+    <div class="properties-wrapper">
+
+        <div class="row">
+
+            <div ui-view="list" class="col-sm-4 col-xs-12  col-sm-12  listings-bar" ng-hide="displayEditor && isMobile"></div>
+
+
+            <div class="col-sm-8 col-xs-12 listings-wrapper" ng-show="displayEditor">
+                <div ui-view="editor" >
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

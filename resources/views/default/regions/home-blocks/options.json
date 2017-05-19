@@ -1,0 +1,17 @@
+{
+	"collapsed": true,
+	"animate": false,
+	"toolbarSticky": true,
+	"toolbarStyle": "link",
+	"items": {
+		"fields": {
+			"description": {
+				"type": "textarea"
+			},
+			"image": {
+				"type": "image"
+			}
+		}
+	}
+
+}

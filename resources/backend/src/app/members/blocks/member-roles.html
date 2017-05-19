@@ -1,0 +1,40 @@
+<div class="form-horizontal">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Member Roles</div>
+        <div class="panel-body">
+            
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label>Member type</label>
+                    <select ng-model="member.is_admin" class="form-control" ng-options="o.v as o.n for o in [{ n: 'Adminstrator', v: true }, { n: 'Regular user', v: false }]">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="member.is_advertiser"> Estate agent/advertiser
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="member.is_seller"> Non-professional seller/landlord
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="member.is_prospect"> Prospective buyer
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</div>

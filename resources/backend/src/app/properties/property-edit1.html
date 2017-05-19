@@ -1,0 +1,399 @@
+<div class="row">
+
+    <div class="col-sm-12">
+        <a href="" ng-click="showMenu()">Back</a>
+    </div>  
+    <div class="col-sm-8">
+        <h3 style="margin-top: 15px;">Edit Listing : "{{property.title}}"</h3>
+    </div>  
+    <div class="col-sm-4">
+        <div class="btn-group pull-right">
+            <label class="btn btn-success" ng-model="radioModel" btn-radio="'Left'" uncheckable>Visible</label>
+            <label class="btn btn-success" ng-model="radioModel" btn-radio="'Middle'" uncheckable>Hidden</label>
+        </div>
+    </div>  
+
+    <div class="col-sm-12">
+        <def>Languages {{currentLocale}}:</def> <a href="" ng-click="switchLocale(localeChoice.code)" ng-repeat="localeChoice in localeChoicesData" ng-class="{active:currentLocale == localeChoice.code}">{{localeChoice.name}}</a>
+    </div>  
+
+</div>
+
+<hr />
+<br />
+
+- <div ui-view="description"></div> -
+
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-chevron-right"></i> Property description</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label>Listing title</label>
+                                <input type="text" class="form-control" ng-model="translation.title" placeholder="">
+                            </div>
+                        </div>        
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">USD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Summary</label>
+                        <textarea class="form-control" cols="20" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" cols="20" rows="10"></textarea>    
+                    </div>
+                </div>
+                <div class="panel-footer">   
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <br />
+            <br />
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-chevron-right"></i> Property features</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>	
+
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>	
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <h4><i class="fa fa-file-text-o"></i> Property features</h4>
+                    <hr />
+                </div>
+                <div class="col-xs-12">
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>	
+
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>							
+                        <div class="col-xs-3">
+                            <label>Feature #1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>							
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><i class="fa fa-file-code-o"></i> Property details</h4>
+                    <hr />
+                </div>
+                <div class="col-sm-3">
+                    <label>Property category</label>
+                    <select class="form-control">
+                        <option>Number of beds</option>
+                        <option>1 bed</option>
+                        <option>2 beds</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </div>          
+                <div class="col-sm-3">
+                    <label>Property type</label>
+                    <select class="form-control">
+                        <option>Number of beds</option>
+                        <option>1 bed</option>
+                        <option>2 beds</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </div>        
+
+                <div class="col-sm-3">
+                    <label>Condition of property</label>
+                    <select class="form-control">
+                        <option>New home</option>
+                        <option>Pre-owned</option>
+                    </select>
+                </div>   
+                <div class="col-sm-3">
+                    <label>Property size</label>
+                    <input type="text" class="form-control" placeholder="">
+
+                </div>  
+
+
+            </div>
+            <br />
+            <div class="row">
+
+
+                <div class="col-sm-3">
+                    <label>Bedrooms</label>
+                    <select class="form-control" ng-model="property.num_bedrooms">
+                        <option value="0">Number of beds</option>
+                        <option value="1">1 bed</option>
+                        <option value="2">2 beds</option>
+                        <option value="3">3 beds</option>
+                        <option value="4">4 beds</option>
+                        <option value="5">5+ beds</option>
+                    </select>
+                </div>   
+
+                <div class="col-sm-3">
+                    <label>Bathrooms</label>
+                    <select class="form-control">
+                        <option>Number of beds</option>
+                        <option>1 bed</option>
+                        <option>2 beds</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </div>      
+
+                <div class="col-sm-3">
+                    <label>Outside space</label><br />
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1"> Garden
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox2" value="option2"> Parking
+                    </label>
+
+
+                </div>      
+
+                <div class="col-sm-3">
+                    <label>Investment property</label><br />
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Yes
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
+                    </label>
+
+                </div>      
+
+            </div>
+
+
+
+            <br />
+            <br />
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><i class="fa fa-image"></i> Images and documents</h4>
+                    <hr />
+                </div>
+
+
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#">Property photos</a></li>
+                        <li role="presentation"><a href="#">Floor plans</a></li>
+                        <li role="presentation"><a href="#">Documents</a></li>
+                        <li role="presentation"><a href="#">Virtual tours</a></li>
+                    </ul>
+                    <div id="my-dropzone" class="dropzone" style="background: #d2d2d2; width: 100%; height: 350px; display: block;"></div>
+                </div>    
+            </div>    
+
+            <br />
+            <br />
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><i class="fa fa-location-arrow"></i> Property address</h4>
+                    <hr />
+                </div>
+                <div class="col-xs-6">
+
+                    <style>
+                        #map {
+                            border: 1px solid #DDD;
+                            width:100%;
+                            height: 300px;
+                            margin: 10px 0 10px 0;
+                            -webkit-box-shadow: #AAA 0px 0px 15px;
+                        }
+                    </style>
+
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Address line 1</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label>Address line 2</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label>Town/City</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-8">
+                            <label>State/Province/Region</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-4">
+                            <label>Postcode/ZIP</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label>Country</label>
+                            <input type="text" class="form-control" placeholder="">
+
+                        </div>
+                    </div><br />
+
+
+
+                </div>
+                <div class="col-xs-6">
+
+
+                    <div class='map-ad-wrapper' style="height: 300px">
+
+                        <div id="map"></div>
+                        <div id="legend">Drag and drop the marker to the correct location</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <button type="submit" class="btn btn-default">Save</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+            </form>
+

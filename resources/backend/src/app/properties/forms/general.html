@@ -1,0 +1,167 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-chevron-right"></i> General</div>
+        <div class="panel-body">
+
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <label>Listing type</label>
+                    <select class="form-control" ng-model="property.listing_type">
+                        <option value="sale">Sale</option>
+                        <option value="rent">Rent</option>
+                    </select>
+                </div>   
+
+                <div class="col-sm-3">
+                    <label>Listing status</label>
+                    <select class="form-control" ng-model="property.listing_status">
+                        <option value="for_sale">For sale</option>
+                        <option value="sale_under_offer">Sale under offer</option>
+                        <option value="sold">Sold</option>
+                        <option value="to_rent">To rent</option>
+                        <option value="rent_under_offer">Rent under offer</option>
+                        <option value="rented">Rented</option>
+                    </select>
+                </div>     
+
+                <div class="col-sm-3">
+                    <label>Property type</label>
+                    
+                    <select class="form-control" ng-model="property.property_type_id" ng-options="propertyType.id as propertyType.name for propertyType in propertyTypes">
+                    </select>
+                </div>           
+ 
+                <div class="col-sm-3">
+                    <label>Submitted by (user)</label>
+					<span ng-show="spinnerPage" class="pull-right" style="margin-right: 5px;"><i class="fa fa-refresh fa-spin"></i></span>
+                    <input type="hidden" class="form-control" ng-model="property.user_id">
+					<ui-select ng-model="selectedUser.selected" theme="bootstrap" ng-change="updateUserLink()" ng-show="true">
+						<ui-select-match placeholder="{{property.email}}">{{$select.selected.email}}</ui-select-match>
+						<ui-select-choices refresh="searchUsers($select)" refresh-delay="300" repeat="user in userList">
+							<span ng-bind-html="user.email | highlight: $select.search"></span>
+						</ui-select-choices>
+					</ui-select>
+						
+                </div> 
+  
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Available from</label>
+
+<div class="dropdown">
+  <a class="dropdown-toggle" id="available_from" role="button" data-toggle="dropdown" href="" ng-click="setToday()">
+    <div class="input-group"><input type="text" class="form-control" ng-model="property.available_from" data-date-time-input="YYYY-MM-DD"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <datetimepicker data-ng-model="property.available_from" data-date-time-input="YYYY-MM-DD" data-datetimepicker-config="{ dropdownSelector: '#available_from', startView:'day', minView:'day' }"/>
+  </ul>
+</div>
+
+
+                </div>
+				
+                <div class="col-sm-3">
+                    <label>Expires on</label>
+
+<div class="dropdown">
+  <a class="dropdown-toggle" id="expires_at" role="button" data-toggle="dropdown" href="" ng-click="setToday()">
+    <div class="input-group"><input type="text" class="form-control" ng-model="property.expires_at" data-date-time-input="YYYY-MM-DD"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <datetimepicker data-ng-model="property.expires_at" data-date-time-input="YYYY-MM-DD" data-datetimepicker-config="{ dropdownSelector: '#expires_at', startView:'day', minView:'day' }"/>
+  </ul>
+</div>
+
+
+                </div>
+				
+                <div class="col-sm-3">
+                    <label>Condition of property</label>
+                    <select class="form-control" ng-model="property.property_condition">
+                        <option value="not_specified">Not specified</option>
+                        <option value="new">New</option>
+                        <option value="pre_owned">Pre-owned</option>
+                    </select>
+                </div>   
+                <div class="col-sm-3">
+                    <label>Property size</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="property.property_size">
+                        <span class="input-group-addon">m<sup>2</sup></span>
+                    </div>
+                </div>  
+
+
+            </div>
+            <br />
+            <div class="row">
+
+
+                <div class="col-sm-3">
+                    <label>Bedrooms</label>
+                    <input type="text" class="form-control" ng-model="property.num_bedrooms">
+                </div>   
+
+                <div class="col-sm-3">
+                    <label>Bathrooms</label>
+                    <input type="text" class="form-control" ng-model="property.num_bathrooms">
+                </div>      
+
+                <div class="col-sm-3">
+                    <label>Outside space</label><br />
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="has_garden" ng-model="property.has_garden" ng-true-value="1" ng-false-value="0"> Garden
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="has_parking" ng-model="property.has_parking" ng-true-value="1" ng-false-value="0"> Parking
+                    </label>
+
+
+                </div>      
+
+                <div class="col-sm-3">
+                    <label>Investment property</label><br />
+                    <label class="radio-inline">
+                        <input type="radio" name="is_investment_property" ng-model="property.is_investment_property" value="1"> Yes
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="is_investment_property" ng-model="property.is_investment_property" value="0"> No
+                    </label>
+
+                </div>      
+
+            </div>
+            <br />
+            <div class="row">
+
+
+                <div class="col-sm-3">
+                    <label>&nbsp;</label>
+					<label class="checkbox-inline">
+                        <input type="checkbox" name="is_featured" ng-model="property.is_featured" ng-true-value="1" ng-false-value="0"> Featured
+                    </label>
+				</div>
+				                    
+            </div>
+            
+
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" ng-hide="saving" class="btn btn-primary pull-right">Save</button>
+                    <button type="button" ng-show="saving" class="btn btn-primary pull-right">Saving...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

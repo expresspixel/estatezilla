@@ -1,0 +1,151 @@
+
+<div class="panel panel-default upload-panel">
+    <div class="panel-heading"><i class="fa fa-chevron-right"></i> Images and documents</div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ng-class="{active: imageType == 'photos'}"><a href="" ng-click="imageType = 'photos'">Property photos</a></li>
+                    <li role="presentation" ng-class="{active: imageType == 'floor_plans'}"><a href="" ng-click="imageType = 'floor_plans'">Floor plans</a></li>
+                    <li role="presentation" ng-class="{active: imageType == 'documents'}"><a href="" ng-click="imageType = 'documents'">Documents</a></li>
+                    <li role="presentation" ng-class="{active: imageType == 'virtual_tours'}"><a href="" ng-click="imageType = 'virtual_tours'">Virtual tours</a></li>
+                </ul>
+
+                <div id="my-dropzone" class="dropzone" style="background: #fcfcfc; border: #e2e2e2 1px solid; border-top: 0;width: 100%; min-height: 350px; display: block; padding: 20px">
+
+                    <div class="row">
+
+                        <div class="col-xs-6 col-md-4 col-lg-3" ng-if="uploader"  ng-hide="imageType == 'virtual_tours'">
+                            
+                            <div class="panel panel-default add-image-panel" nv-file-over uploader="uploader" ng-hide="uploading">
+                                <div class="panel-body" >
+                                    <br />
+                                    
+                                    <div ng-hide="uploading_init">
+                                        
+                                        <i class="fa fa-check success-color" style="font-size: 40px;" ng-hide="uploading_error"></i>
+                                        <p ng-hide="uploading_error">Succcessfully uploaded!</p>
+                                        
+                                        <i class="fa fa-times error-color" style="font-size: 40px;" ng-show="uploading_error"></i>
+                                        <p ng-show="uploading_error">There was an error while uploading.</p>
+                                        
+                                        <br />
+                                        
+                                        <button class="btn btn-primary" type="button" ng-click="clickUpload()" ng-hide="uploading_error">Upload files</button>
+                                        <button class="btn btn-primary" type="button" ng-click="clickUpload()" ng-show="uploading_error">Try again</button>
+                                        
+                                    </div>
+                                    
+                                    <div ng-show="uploading_init">
+                                        
+                                        <i class="fa fa-picture-o" style="font-size: 40px;"></i>
+                                        <input type="file" id="imageUpload" style="display: none;" nv-file-select uploader="uploader" multiple/>
+                                        <p>Drop files here</p>
+                                        <p>or</p>
+                                        <button class="btn btn-primary" type="button" ng-click="clickUpload()">Select files</button>
+
+                                        <ul ng-if="false">
+                                            <li ng-repeat="item in uploader.queue">
+                                                Name: <span ng-bind="item.file.name"></span><br/>
+                                                <button ng-click="item.upload()" >upload</button>
+                                            </li>
+                                        </ul>
+    
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div class="panel panel-default add-image-panel" ng-show="uploading">
+                                <div class="panel-body" >
+                                    <br />
+
+                                    <i class="fa fa-circle-o-notch fa-spin" style="font-size: 40px;"></i>
+                                    <p>Uploading...</p>
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+
+
+
+                        <div class="col-xs-6 col-md-4 col-lg-3" ng-repeat="image in property[imageType] track by $index"  ng-hide="imageType == 'virtual_tours'">
+
+                            <div class="panel panel-default image-panel">
+                                <div class="panel-body">
+                                    <a class="close_ico" href="" ng-click="deleteImage(imageType, image.file)" data-toggle="tooltip" data-placement="top" title="Click to remove"></a>
+                                    <img class="thumbnail" ng-src="{{getThumbnail(property.id, imageType, image.file)}}" style="width: 100%"/>
+
+                                    <div class="uneditable">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <span editable-text="image.caption" e-form="textBtnForm" onbeforesave="updateCaption(image, $data)">{{image.caption | characters:20}}</span> <a href="" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">(Edit)</a>                                               
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-xs-12"  ng-show="imageType == 'virtual_tours'">
+
+                            <div class="panel panel-default image-panel">
+                                <div class="panel-body">
+<form name="form" ng-submit="submitVirtualTours(form.$valid)" novalidate qn:validate="errors">
+
+                                    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Virtual tour file URL</th>
+          <th>Caption</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="image in translation[imageType] track by $index">
+          <th scope="row">{{$index+1}}</th>
+          <td><input type="text" class="form-control" ng-model="image.url" /></td>
+          <td><input type="text" class="form-control" ng-model="image.caption" /></td>
+            <td><a href="" ng-click="addVirtualTour()" class="btn btn-default" ng-show="$last"><i class="fa fa-plus"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+        </form>  
+                                 
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>   
+        </div>
+
+    </div>
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" ng-click="submitVirtualTours(form.$valid)" ng-disabled="saveDisabled" ng-class="{disabled:save}" class="btn btn-primary pull-right">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+    

@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Editing region : {{region.name}}</h4>
+</div>
+<div class="modal-body">
+
+    <div class="row">
+
+        <div class="col-md-12" style="overflow: hidden;">
+        <div style="height: 400px; overflow-y: scroll; overflow-x: hidden;margin-bottom: 20px;">
+            <div class="loading" ng-show="loading" style="height: 400px; line-height: 400px; text-align: center;">Loading...</div>
+            <div id="form"></div>
+        </div>
+
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="dismiss()">Close</button>
+    <button type="button" class="btn btn-primary" ng-show="saving">Saving...</button>
+    <button type="button" class="btn btn-primary" ng-hide="saving" ng-click="submitForm()">Save</button>
+</div>

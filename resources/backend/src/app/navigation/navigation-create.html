@@ -1,0 +1,47 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Adding new menu</h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="form-group" ng-class="{'has-error has-feedback': (form.name.$invalid && form.$submitted)}">
+                    <label>Menu name</label>
+                    <input type="text" name="name" ng-model="menu.name" class="form-control" ng-change="slugify(menu.name)" server-error ng-required>
+                    <span ng-show="form.name.$invalid && form.$submitted" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>                    
+                    <div class="help-block" ng-messages="form.name.$error" ng-if="form.$submitted" ng-messages-include="my-messages">
+                        <p ng-message="server" class="help-block">{{ errors.name }}</p>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group" ng-class="{'has-error has-feedback': (form.handle.$invalid && form.$submitted)}">
+                    <label>Handle</label>
+                    <input type="text" name="handle" ng-model="menu.handle" class="form-control" ng-required server-error>
+                    <span ng-show="form.handle.$invalid && form.$submitted" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>                    
+                    <div class="help-block" ng-messages="form.handle.$error" ng-if="form.$submitted" ng-messages-include="my-messages">
+                        <p ng-message="server" class="help-block">{{ errors.handle }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="dismiss()">Close</button>
+        <button type="button" class="btn btn-primary" ng-show="loading">Please wait...</button>
+        <button type="submit" class="btn btn-primary" ng-hide="loading">Create menu</button>
+    </div>
+    </div><!-- /.modal-content -->
+</form>
+
+<script type="text/ng-template" id="my-messages">
+    <p ng-message="required" class="help-block">This field is required</p>
+    <p ng-message="minlength" class="help-block">Input too short</p>
+    <p ng-message="email" class="help-block">This field must be an email</p>
+</script>

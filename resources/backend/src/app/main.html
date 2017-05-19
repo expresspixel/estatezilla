@@ -1,0 +1,49 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+	<div id="wrapper" class="container-fluid {{currentPage}}-wrapper max-width">
+
+		<!-- <div ng-include="'components/sidebar/sidebar.html'"></div> -->
+
+
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="{{currentPage}}">
+			
+			<div ui-view></div>
+			
+		</div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+	<div ng-show="loader" class="ui-ios-overlay">
+		<i class="fa fa-circle-o-notch fa-spin"></i> <span class="title">Loading...</span>
+	</div>
+	
+	<div ng-show="loggingOut" class="ui-ios-overlay logging-out">
+		<i class="fa fa-circle-o-notch fa-spin"></i> <span class="title" >Logging out...</span>
+	</div>
+
+	
+</div>
+
+	<footer>
+		<div class="container">
+			
+				<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text-center">
+					<p class="logo-text">estatezilla</p>
+				</div>				
+				</div>
+				
+				<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text-center">
+					<p>Code licensed under <a href="">GNU General Public Licence</a>.</p>
+				</div>
+				</div>
+			</div>
+
+		</div><!-- /container -->
+	</footer>

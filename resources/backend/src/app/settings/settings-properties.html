@@ -1,0 +1,189 @@
+
+<div class="container-fluid no-padding">      
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">  
+                <br />
+                <h3>Settings > properties</h3>
+                <br /><br />
+                <div ng-include="'app/settings/navbar.html'"></div>
+
+                <br />
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Property categories</h4>
+                        <p> Edit your website information. The name shows up on your website, while the title and meta description help define how your store shows up on search engines. </p>
+
+
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Property type {{editPropertyTypeKey}}</th>
+                                    <th>Search criteria type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="(rowKey, propertyType) in propertyTypes | orderBy:'position':reverse" ng-hide="editPropertyTypeKey == propertyType.id">
+                                    <td><a href="" style="margin-right: 2px;" ng-click="movePropertyType(rowKey, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="movePropertyType(rowKey, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+                                    <td><a href=""><strong>{{propertyType.name}}</strong></a></td>
+                                    <td><a href=""><strong>{{propertyType.search_criteria_type.name}}</strong></a></td>
+                                    <td><a href="" ng-click="editPropertyType(propertyType.id)">Edit</a> | <a href="" ng-click="deletePropertyType(propertyType)">Delete</a></td>
+                                </tr>
+                                
+                                <tr ng-repeat-end="(rowKey, propertyType) in propertyTypes | orderBy:'position':reverse" ng-show="editPropertyTypeKey == propertyType.id">
+                                    <td><a href="" style="margin-right: 2px;" ng-click="movePropertyType(rowKey, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="movePropertyType(rowKey, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+                                    <td>
+                                        <input type="text" ng-model="propertyTypeCopy.name" class="form-control">
+                                    </td>
+                                    <td>
+                                        <select class="form-control" ng-model="propertyTypeCopy.search_criteria_type_id" ng-options="item.id as item.name for item in searchCriteriaTypes"></select>
+                                    </td>
+                                   <td ng-hide="propertyTypeUpdating"><button type="button" class="btn btn-default" ng-click="updatePropertyType(propertyType, propertyTypeCopy)">Update</button> | <a href="" ng-click="cancelEditPropertyType(propertyType.id)">Cancel</a></td>
+                                    <td ng-show="propertyTypeUpdating"><button type="button" class="btn btn-default"><i class="fa fa-refresh fa-spin"></i>  Updating</button></td>
+                                    
+                                </tr>    
+                                
+                            </tbody>
+                        </table>
+
+                        <form ng-submit="addPropertyType()">
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Property type</label><br />
+                                        <input type="text" class="form-control" ng-model="newPropertyType.name">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Search criteria type</label><br />
+                                        <select class="form-control" ng-model="newPropertyType.search_criteria_type_id" ng-options="item.id as item.name for item in searchCriteriaTypes">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label><br />
+                                        <button type="submit" class="btn btn-default" ng-hide="savingPropertyType">Add new</button>
+                                        <button type="button" class="btn btn-default" ng-show="savingPropertyType">Saving...</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>  
+
+
+                        </form>
+
+                    </div>                       
+
+
+                </div>                      
+                <br />
+                <hr />
+                <br />
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Search criteria types</h4>
+                        <p> This address will appear on your invoices and will be used to calculate your shipping rates. </p>
+
+
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Search criteria type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr ng-repeat-start="(rowKey, searchCriteriaType) in searchCriteriaTypes | orderBy:'position':reverse" ng-hide="editSearchCriteriaTypeKey == searchCriteriaType.id">
+                                    <td><a href="" style="margin-right: 2px;" ng-click="moveSearchCriteriaType(rowKey, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="moveSearchCriteriaType(rowKey, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+                                    <td><a href=""><strong>{{searchCriteriaType.name}}</strong></a></td>
+                                    <td><a href="" ng-click="editSearchCriteriaType(searchCriteriaType.id)">Edit</a> | <a href="" ng-click="deleteSearchCriteriaType(searchCriteriaType)">Delete</a></td>
+                                </tr>
+                                
+                                <tr ng-repeat-end="(rowKey, searchCriteriaType) in searchCriteriaTypes | orderBy:'position':reverse" ng-show="editSearchCriteriaTypeKey == searchCriteriaType.id">
+                                    <td><a href="" style="margin-right: 2px;" ng-click="moveSearchCriteriaType(rowKey, 'up')"><i class="fa fa-arrow-up"></i></a><a href="" ng-click="moveSearchCriteriaType(rowKey, 'down')"><i class="fa fa-arrow-down"></i></a></td>
+                                    <td>
+                                        <select class="form-control" ng-model="searchCriteriaTypeCopy.search_criteria_type_id" ng-options="item.id as item.name for item in searchCriteriaTypes"></select>
+                                    </td>
+                                   <td ng-hide="searchCriteriaTypeUpdating"><button type="button" class="btn btn-default" ng-click="updateSearchCriteriaType(searchCriteriaType, searchCriteriaTypeCopy)">Update</button> | <a href="" ng-click="cancelEditSearchCriteriaType(searchCriteriaType.id)">Cancel</a></td>
+                                    <td ng-show="searchCriteriaTypeUpdating"><button type="button" class="btn btn-default"><i class="fa fa-refresh fa-spin"></i>  Updating</button></td>
+                                    
+                                </tr> 
+                                
+                                
+                            </tbody>
+                        </table>
+
+                        <form ng-submit="addSearchCriteriaType()">
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Add search criteria type</label><br />
+                                        <input type="text" class="form-control" ng-model="newSearchCriteriaType.name" placeholder="">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label><br />
+                                        <button type="submit" class="btn btn-default" ng-hide="savingAddSearchCriteriaType">Submit</button>
+                                        <button type="button" class="btn btn-default" ng-show="savingAddSearchCriteriaType">Saving...</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>  
+
+
+                        </form>         
+
+
+                    </div>                      
+                    <br />
+
+
+                </div>
+
+            </div>      
+            <br />
+            <br />
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

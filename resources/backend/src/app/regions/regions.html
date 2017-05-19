@@ -1,0 +1,69 @@
+<div class="container-fluid no-padding">			
+
+    <div class="container-fluid main-content">
+
+        <div class="row">
+            <div class="col-md-12">	
+                <br />
+                <div class="row">
+                    <div class="col-md-8">  
+                        <h3>Snippets</h3>
+                    </div>
+
+                </div>
+                <br />
+                <br />
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-md-9 sorter" ng-click="tableSort('name')" table-sorter info="{ name: 'name', sort: sort }">Title</th>
+                            <th style="width: 40px;" ng-repeat="localeChoice in localesList">{{localeChoice.code.toUpperCase()}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="region in regionsList" style="height: 60px">
+                            <td>
+                                <a href="" ng-click="regionEdit(region.id, currentLocale)"><strong>{{region.name}}</strong></a>
+                            </td>
+                            <td ng-repeat="localeChoice in localesList" style="vertical-align: middle">
+                                
+                                <div style="line-height: 80px">
+                                    <a href="" ng-click="regionEdit(region.id, localeChoice.code)" class="locale-status" ng-class="{'locale-info': region.translated[localeChoice.code]}">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br />
+
+            </div>
+
+        </div>			
+        <br />
+        <br />
+
+    </div>
+</div>
+
+
+</div>
+
+<script type="text/ng-template" id="table-sorter.html">
+    <span ng-transclude></span>
+    <a href="" class="" ng-show="info.sort.field != info.name"></a>
+    <a href="" class="asc" ng-show="info.sort.direction == 'asc' && info.sort.field == info.name"><i class="fa fa-sort-asc"></i></a>
+    <a href="" class="desc" ng-show="info.sort.direction == 'desc' && info.sort.field == info.name"><i class="fa fa-sort-desc"></i></a>
+</script>
+
+<script type="text/ng-template" id="locale-icon.html">
+    <span ng-transclude></span>
+    <a href="" class="" ng-show="info.sort.field != info.name"></a>
+    <a href="" class="asc" ng-show="info.sort.direction == 'asc' && info.sort.field == info.name"><i class="fa fa-sort-asc"></i></a>
+    <a href="" class="desc" ng-show="info.sort.direction == 'desc' && info.sort.field == info.name"><i class="fa fa-sort-desc"></i></a>
+</script>
+

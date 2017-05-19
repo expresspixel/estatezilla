@@ -1,0 +1,26 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+
+
+    <ul class="sidebar-nav menu">
+
+        <li><a>&nbsp;</a></li>
+        <!--<li ng-repeat="item in menu" ng-class="{'divider-vertical': item.type == 'divider'}">
+            <a ng-if="item.type != 'divider'" ui-sref="{{item.sref}}" ui-sref-active="active"><span><i class="fa {{item.icon}}"></i></span> {{item.title}}</a>
+        </li>-->
+        <li><a ui-sref="app.dashboard.index" class="active"><span><i class="fa fa-desktop"></i></span> Dashboard</a></li>
+        <li ng-show="user.permissions.indexOf('properties') > -1"><a ui-sref="app.properties.index"><span><i class="fa fa-building"></i></span> Properties</a></li>
+        <li ng-show="user.permissions.indexOf('members') > -1"><a ui-sref="app.members.index"><span><i class="fa fa-users"></i></span> Members</a></li>
+        <li class="divider-vertical"></li>
+
+        <li ng-show="user.permissions.indexOf('pages') > -1"><a ui-sref="app.pages.index"><span><i class="fa fa-file-text-o"></i></span> Pages</a></li>   
+        <li ng-show="user.permissions.indexOf('navigation') > -1"><a ui-sref="app.navigation.index"><span><i class="fa fa-sitemap"></i></span> Navigation</a></li>
+        <li ng-show="user.permissions.indexOf('languages') > -1"><a ui-sref="app.languages.index"><span><i class="fa fa-language"></i></span> Languages</a></li>
+        <li class="divider-vertical"></li>
+        
+        <li ng-show="user.permissions.indexOf('transactions') > -1"><a ui-sref="app.transactions.index"><span><i class="fa fa-comments-o"></i></span> Transactions</a></li>   
+        <li ng-show="user.permissions.indexOf('settings') > -1"><a ui-sref="app.settings.index"><span><i class="fa fa-cogs"></i></span> Settings</a></li>
+
+    </ul>
+</div>
+<!-- /#sidebar-wrapper -->

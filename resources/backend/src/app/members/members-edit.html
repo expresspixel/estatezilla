@@ -1,0 +1,87 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+    <div class="container-fluid no-padding">			
+
+        <div class="container-fluid main-content">
+<br /><br />
+            <a ng-show="member.is_admin == false" ui-sref="app.members.index({ memberType: 'member' })"><i class="fa fa-chevron-left"></i> Back to members list</a>
+            <a ng-show="member.is_admin == true" ui-sref="app.settings.admins"><i class="fa fa-chevron-left"></i> Back to list of admins</a>
+
+
+            <div class="row">
+                <div class="col-md-6">	
+                    
+                    <h3>Editing : "{{member.email}}"</h3><hr /><br />
+
+                    <div ng-include="'app/members/blocks/edit-member.html'"></div>
+
+
+                </div>
+
+                <div class="col-md-6">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-10 pull-right">
+                            <div class="well">
+
+                                <div ng-include="'app/members/blocks/member-roles.html'"></div>
+                                <div class="panel panel-default" ng-show="member.is_admin">
+                                    <div class="panel-heading">Admin access</div>
+                                    <div class="panel-body">
+                                        <div ng-include="'app/members/blocks/admin-access.html'"></div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="panel panel-default" ng-hide="member.is_admin">
+                                    <div class="panel-heading">Member Remarks</div>
+                                    <div class="panel-body">
+                                        <div ng-include="'app/members/blocks/member-remarks.html'"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-12">	  
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="submit" ng-hide="saving" class="btn btn-primary pull-right">Save member</button>
+                            <button type="button" ng-show="saving" class="btn btn-primary pull-right">Saving...</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+</form>
+
+<script type="text/ng-template" id="my-messages">
+    <p ng-message="required" class="help-block">This field is required</p>
+    <p ng-message="minlength" class="help-block">Input too short</p>
+    <p ng-message="email" class="help-block">This field must be an email</p>
+</script>

@@ -1,0 +1,72 @@
+<div ui-tree-handle  class="panel panel-default tree-node tree-node-content" ng-controller="NavigationLinksCtrl">
+    <div class="panel-heading" ng-class="{active: !isCollapsed}">{{link.title}} <a href="" class="pull-right" nodrag ng-click="isCollapsed = !isCollapsed">Edit</a></div>
+    <div class="panel-body" nodrag ng-show="isCollapsed">
+        <form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Link name</label>
+                        <input type="text" name="title" ng-model="link.title" class="form-control" required>
+                        <div ng-messages="form.title.$error" ng-if="form.$submitted" ng-messages-include="my-messages"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Links to</label>
+                        <select class="form-control" ng-model="link.type" ng-options="linkType.type as linkType.name for linkType in linkTypes" ng-change="changeLinkType()"></select>                   
+                        <div ng-messages="form.lastname.$error" ng-if="form.$submitted" ng-messages-include="my-messages"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" ng-show="link.type == 'url'" >
+                        <label>{{linkTypeLabel}}</label>
+                        
+                        <input type="text" name="value" ng-model="link.value.url" class="form-control" required>
+                        
+                        <div ng-messages="form.value.$error" ng-if="form.$submitted" ng-messages-include="my-messages"></div>
+                    </div>                    
+                    <div class="form-group" ng-show="link.type == 'page'" >
+                        <label>{{linkTypeLabel}}</label>
+                        <span ng-show="spinnerPage" class="pull-right" style="margin-right: 5px;"><i class="fa fa-refresh fa-spin"></i></span>
+    
+                        <ui-select ng-model="selectedPage.selected" theme="bootstrap" ng-change="updatePageLink()">
+                          <ui-select-match placeholder="Search for a page">{{$select.selected.title}}</ui-select-match>
+                          <ui-select-choices refresh="searchPages($select)" refresh-delay="300" repeat="page in pageList">
+                            <span ng-bind-html="page.title | highlight: $select.search"></span>
+                          </ui-select-choices>
+                        </ui-select>                        
+                        
+                    </div>                    
+                    <div class="form-group" ng-show="link.type == 'property'" >
+                        <label>{{linkTypeLabel}}</label>
+                        
+                        <span ng-show="spinnerProperties" class="pull-right" style="margin-right: 5px;"><i class="fa fa-refresh fa-spin"></i></span>
+    
+                        <ui-select ng-model="selectedProperty.selected" theme="bootstrap" ng-change="updatePropertyLink()">
+                          <ui-select-match placeholder="Search for a property">{{$select.selected.displayable_address}}</ui-select-match>
+                          <ui-select-choices refresh="searchProperties($select)" refresh-delay="300" repeat="property in propertyList">
+                            <span ng-bind-html="property.displayable_address | highlight: $select.search"></span>
+                          </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+
+				<a class="muted delete-link" href="" ng-click="deleteItem()"><i class="fa fa-times"></i> Delete</a>
+
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<ol ui-tree-nodes="" ng-model="link.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="link in link.nodes" ui-tree-node ng-include="'app/navigation/navigation-links.partial.html'">
+    </li>
+</ol>

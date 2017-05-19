@@ -1,0 +1,324 @@
+
+<div class="container-fluid no-padding">      
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">  
+                <br />
+
+                <h3>Settings</h3>
+                <br /><br />
+                <div ng-include="'app/settings/navbar.html'"></div>
+
+                <br />
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Website information</h4>
+                        <p>The website name shows up on your frontend. The title and meta description will be the default ones set for your home page.</p>
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+
+                                <form ng-submit="saveWebsiteDetails()">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Site name</label>
+                                                <input type="text" class="form-control" ng-model="settings.website_name">
+                                            </div>
+                                        </div>
+
+                                    </div>  
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea class="form-control" ng-model="settings.website_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div> 
+									
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Theme</label>
+                                                <select class="form-control" ng-model="selectedTheme" ng-options="theme.code as theme.value for theme in themes">
+                                                </select>  
+                                            </div>
+                                        </div>
+                                    </div>  
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Logo</label><br />
+                                                <img ng-src="{{logoPath}}" alt="Logo" class="img-rounded" style="max-width: 150px;"><br />
+                                                <input type="file" nv-file-select="" uploader="uploader" />
+                                                <p class="help-block" ng-show="uploading"><i class="fa fa-refresh fa-spin"></i> uploading...</p>
+                                                <p class="help-block" ng-hide="uploading">Please make sure the logo is the right dimensions</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>                       
+
+
+                </div>                      
+                <br />
+                <hr />
+                <br />
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Company address</h4>
+                        <p>This address will appear on your frontend contact section. Emails will all be sent to your contact email, while the support email will only be used in your support form.</p>
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+
+                                <form ng-submit="saveContactDetails()">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Company name</label>
+                                                <input type="text" class="form-control" ng-model="settings.company_name">
+                                            </div>
+                                        </div>
+
+                                    </div>  
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control" ng-model="settings.phone">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Fax</label>
+                                                <input type="text" class="form-control" ng-model="settings.phone">
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <textarea class="form-control" ng-model="settings.address"></textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label>Contact email</label>
+                                                <input type="text" class="form-control" ng-model="settings.contact_email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label >Support email</label>
+                                                <input type="text" class="form-control" ng-model="settings.support_email">
+                                            </div>
+                                        </div>
+
+                                    </div>                                    
+                                    
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Latitude</label>
+                                                <input type="text" class="form-control" ng-model="settings.company_latitude">
+                                            </div>    
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Longitude</label>
+                                                <input type="text" class="form-control" ng-model="settings.company_longitude">
+                                            </div>    
+                                        </div>
+
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>                       
+
+
+                </div>                  
+
+                <br />
+                <hr />
+                <br />
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Google Analytics</h4>
+                        <p>Enter your google analytics code to track your website easily</p>
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+
+                                <form ng-submit="saveAnalyticsDetails()">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Analytics code</label>
+                                                <textarea class="form-control" ng-model="settings.analytics_code"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>                       
+
+
+                </div>                      
+                <br />
+
+                <br />
+                <hr />
+                <br />
+                <div class="row">
+
+                    <div class="col-md-3">  
+                        <h4>Default standards and formats</h4>
+                        <p>Set up your preffered country, currency, date format, time zone and initial map locatioons</p>
+                    </div>   
+
+                    <div class="col-md-7  col-md-offset-1">  
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+
+                                <form ng-submit="saveStandardDetails()">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Timezone</label>
+                                                <select class="form-control" ng-model="settings.timezone" ng-options="timezone.value as timezone.text for timezone in timezones">
+                                            
+                                                </select>
+                                            </div>    
+                                        </div>         
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Currency</label>
+                                                
+                                                <select class="form-control" ng-model="settings.default_currency" ng-options="currency.code as currency.name for currency in currencies">
+                                                </select>
+                                                
+                                            </div>
+                                        </div>                                                                                       
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Default country</label>
+                                                <select class="form-control" ng-model="settings.default_country" ng-options="country.code as country.name for country in countries">
+                                            
+                                                </select>
+                                            </div>    
+                                        </div>  
+                                    </div>   
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="muted">The position of your map originally</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Initial map latitude</label>
+                                                <input type="text" class="form-control" ng-model="settings.initial_lat">
+                                            </div>    
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Initial map longitude</label>
+                                                <input type="text" class="form-control" ng-model="settings.initial_lng">
+                                            </div>    
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Initial map zoom</label>
+                                                <input type="text" class="form-control" ng-model="settings.initial_zoom">
+                                            </div>    
+                                        </div>   
+                                    </div>   
+
+                                    
+                                
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-default">Submit</button>
+                                        </div>
+                                    </div>  
+                            </div>
+
+                        </div>
+
+                        </form>
+
+                </div>
+            </div>
+        </div>                       
+
+
+    </div>   
+
+
+
+    <br />
+
+
+</div>
+
+</div>      
+<br />
+<br />
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+

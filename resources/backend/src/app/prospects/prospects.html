@@ -1,0 +1,127 @@
+<div class="container-fluid no-padding">			
+
+
+    <div class="container-fluid main-content">
+
+
+
+        <div class="row">
+            <div class="col-md-12">	
+                <br />
+                <div class="row">
+                    <div class="col-md-8">	
+                        <h3>Members</h3>
+                    </div>
+                    <div class="col-md-4">	
+                        <br />
+                        <form class="form-inline pull-right" ng-submit="performSearch()">
+
+                            <div class="form-group">
+                                <div class="left-inner-addon ">
+                                    <i class="fa fa-search"></i>
+                                    <input type="text" class="form-control" ng-model="search"  placeholder="Search for a user" />
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-default">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <br /><br />
+                <ul class="nav nav-tabs">
+                    <li><a ui-sref="app.members.index({ memberType: 'member' })" data-toggle="tab">All members</a></li>
+                    <li><a ui-sref="app.members.index({ memberType: 'advertiser' })" data-toggle="tab">Estate agents</a></li>
+                    <li><a ui-sref="app.members.index({ memberType: 'seller' })" data-toggle="tab">Sellers/Landlords</a></li>
+                    <li><a ui-sref="app.members.index({ memberType: 'prospect' })" data-toggle="tab">Registered prospects</a></li>
+                    <li class="pull-right active"><a ui-sref="app.prospects.index({ memberType: 'prospect' })" data-toggle="tab">Unregistered prospects</a></li>
+                </ul>
+
+                <div class="blank-slate" ng-show="membersList != null && membersList.length == 0">
+                    <br /><br />
+                    <i class="fa fa-users"></i>
+                    <h2>Sorry, no prospects found</h2>
+                </div>
+                <div ng-show="membersList != null && membersList.length > 0">
+
+                    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                        <div class="col-md-8">
+
+                        </div>
+                               
+                        <div class="col-md-4">	
+                            <div class="pull-right" style="margin-top: 0px;">	
+                                <pagination style="margin-top: 0px;  margin-bottom: 0; " total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="false" rotate="true" num-pages="numPages"  ng-change="pageChanged()"></pagination>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <table class="table table-striped table-bordered">
+                        <thead>
+  
+                            <tr>
+                                <th class="sorter" ng-click="tableSort('email')" table-sorter info="{ name: 'email', sort: sort }">Email</th>
+                                <th class="sorter" ng-click="tableSort('name')" table-sorter info="{ name: 'name', sort: sort }">Name</th>
+                                <th class="sorter" ng-click="tableSort('created_at')" table-sorter info="{ name: 'role', sort: sort }">Date created</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="member in membersList">
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div style="padding-left: 5px;">
+											<strong>{{member.email}}</strong> <a ng-click="deleteMember(member)" class="delete-link muted" href=""><small>(Delete)</small></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{{member.firstname}} {{member.lastname}}</td>
+                                <td>Prospect</td>
+                                <td>{{member.registered_at}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="pagination-text">Showing {{pageInfo.from}} - {{pageInfo.to}} <small>of {{pageInfo.total}}</small></div>
+                    <nav class="disabled">
+
+
+
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-3" ng-if="false">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <br />
+                        <br />
+                        <div class="well">
+                            <h4>Membership information</h4>
+                            <p><strong>Registered members</strong> are users that have registered on your website and are actively looking for properties.</p>
+                            <br />
+                            <p><strong>Prospective buyers</strong> are users that have made in interest in a property or list of properties on your site without registering.</p><br />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>			
+        <br />
+        <br />
+
+
+
+    </div>
+</div>
+</div>
+
+
+<script type="text/ng-template" id="table-sorter.html">
+    <span ng-transclude></span>
+    <a href="" class="" ng-show="info.sort.field != info.name"></a>
+    <a href="" class="asc" ng-show="info.sort.direction == 'asc' && info.sort.field == info.name"><i class="fa fa-sort-asc"></i></a>
+    <a href="" class="desc" ng-show="info.sort.direction == 'desc' && info.sort.field == info.name"><i class="fa fa-sort-desc"></i></a>
+</script>
+
+

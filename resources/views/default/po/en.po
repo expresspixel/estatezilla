@@ -1,0 +1,657 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2017-05-17T18:51:02+00:00\n"
+"PO-Revision-Date: 2017-05-17T18:51:02+00:00\n"
+"Language: \n"
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:22
+msgid "Sign in"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:23
+msgid "If you have an account with us, please log in."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:48
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:47
+msgid "Email address"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:52
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:51
+#: C:\express\estatezilla/resources/views/default\user\change-password.blade.php:24
+msgid "Password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:57
+msgid "Remember me"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:60
+msgid "Login"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:65
+msgid "Forgot your password?"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:65
+msgid "Click here to reset"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:84
+msgid "Register"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:85
+msgid "By creating an account you'll have access to a dashboard where you can post ads, manage your ads and edit your ads."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\login.blade.php:86
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:12
+msgid "Create an account"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\password.blade.php:15
+#: C:\express\estatezilla/resources/views/default\auth\reset.blade.php:13
+msgid "Reset Password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\password.blade.php:16
+msgid "Enter the e-mail address associated with your account, then click Continue. We'll email you a link to a page where you can easily create a new password."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:36
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:313
+msgid "Full name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:39
+msgid "Enter your first name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:48
+msgid "Enter email"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:52
+msgid "Enter a password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:55
+#: C:\express\estatezilla/resources/views/default\user\change-password.blade.php:35
+msgid "Confirm password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:56
+msgid "Confirm your password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:61
+msgid "We can contact you with relevant offers and news"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\register.blade.php:67
+msgid "Create account"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\auth\reset.blade.php:14
+msgid "We'll ask you for your password when you submit a listing or save your favorite properties"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:117
+#: C:\express\estatezilla/resources/views/default\layouts\user.blade.php:9
+#: C:\express\estatezilla/resources/views/default\user\menu.blade.php:5
+msgid "My account"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:120
+#: C:\express\estatezilla/resources/views/default\layouts\user.blade.php:10
+#: C:\express\estatezilla/resources/views/default\user\menu.blade.php:8
+msgid "Saved properties"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:122
+#: C:\express\estatezilla/resources/views/default\user\menu.blade.php:10
+msgid "Account details"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:123
+#: C:\express\estatezilla/resources/views/default\user\change-password.blade.php:3
+#: C:\express\estatezilla/resources/views/default\user\change-password.blade.php:13
+#: C:\express\estatezilla/resources/views/default\user\menu.blade.php:11
+msgid "Change password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:125
+#: C:\express\estatezilla/resources/views/default\user\menu.blade.php:13
+msgid "Log out"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:129
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "Login/Register"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:134
+msgid "Language"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\layouts\default.blade.php:160
+msgid "All rights reserved"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:8
+msgid "Change location and criteria"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:13
+msgid "Location"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:14
+msgid "Start typing..."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:27
+#: C:\express\estatezilla/resources/views/default\partials\home_form.blade.php:15
+msgid "Buy/Rent"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:28
+msgid "Sale"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:28
+msgid "Rent"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:28
+msgid "All"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:34
+msgid "Within"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:39
+msgid "Beds"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:52
+msgid "Added"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:60
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:234
+msgid "Update"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:81
+msgid "Price range"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:98
+msgid "to"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:123
+#: C:\express\estatezilla/resources/views/default\partials\home_form.blade.php:26
+msgid "Property types"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:162
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:233
+msgid "Condition of property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:194
+msgid "Features and characteristics"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\sidebar.blade.php:225
+msgid "Filter listings"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:5
+msgid "Sorry, no results found. Please try and broaden your search criteria"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:11
+msgid "The location '%s' was not found. Showing all results."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:16
+msgid "Grid view"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:17
+msgid "List view"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:29
+msgid "properties"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:34
+msgid "Sort by"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:86
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:241
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:123
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:56
+msgid "Bedrooms"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\listings\view.blade.php:87
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:245
+msgid "Bathrooms"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:15
+msgid "Contact us"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:21
+msgid "We encountered the following errors:"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:39
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:27
+msgid "First name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:46
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:34
+msgid "Last name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:55
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:42
+msgid "Email"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:62
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:297
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:57
+msgid "Phone number"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:71
+msgid "Category"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:81
+msgid "Your comments"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\contact-us.blade.php:98
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:92
+msgid "Send"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\listings.blade.php:4
+#: C:\express\estatezilla/resources/views/default\pages\map.blade.php:5
+msgid "Home"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\listings.blade.php:6
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:18
+msgid "Properties"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:19
+msgid "For sale"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:31
+msgid "back to listings"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:91
+#: C:\express\estatezilla/resources/views/default\partials\home_carousel.blade.php:22
+msgid "Previous"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:95
+#: C:\express\estatezilla/resources/views/default\partials\home_carousel.blade.php:26
+msgid "Next"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:123
+msgid "Description"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:128
+msgid "We haven't received a description for this property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:132
+msgid "Ref code"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:138
+msgid "Features"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:197
+msgid "Map"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:198
+msgid "Additional information"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:229
+msgid "Property type"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:234
+msgid "condition."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:237
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:57
+msgid "Property size"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:238
+msgid "m&#178;"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:242
+msgid "bedrooms"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:246
+msgid "bathrooms"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:249
+msgid "Floors"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:250
+msgid "floors"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:253
+msgid "Receptions"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:254
+msgid "receptions"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:257
+msgid "Garden"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:258
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:262
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:266
+msgid "Yes"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:258
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:262
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:266
+msgid "No"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:261
+msgid "Parking"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:265
+msgid "Investment property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:298
+msgid "Website"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:303
+msgid "Thanks for contacting us. We'll get back to you shortly."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:305
+msgid "What happens next?"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:306
+msgid "1 - <b>We send your email to</b>"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:307
+msgid "2 - <b>They will be in contact</b> with you as soon as possible."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:310
+msgid "Contact this owner"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:314
+msgid "Enter your full name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:318
+msgid "Your phone"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:319
+msgid "Enter your phone number"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:323
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:64
+msgid "Your email"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:324
+msgid "Enter your email"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:328
+msgid "Your message"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:329
+msgid "I would like more details about this property, please let me know when we can talk..."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:334
+msgid "Please wait..."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:334
+msgid "Contact agent"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:340
+msgid "or call"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "Please login"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "You need to login to be able to save a property.<br /><br />If you don't have an account please register, it only takes a minute."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "Cancel"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "Saving..."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "Save property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:349
+msgid "Remove saved property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:351
+msgid "Send to friend"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:393
+msgid "Want a free valuation?"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:394
+msgid "Looking to sell your property? %s for a free valuation."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:394
+msgid "Contact us today"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:399
+msgid "Can't find the  ideal property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:400
+msgid "If you can't find a property that fits your needs, %s and we'll alert you when a new property that matches your taste comes up us"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\property.blade.php:400
+msgid "send us a message"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:23
+msgid "Tell a friend about this property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:48
+msgid "Your name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:55
+msgid "Your friend's name"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:71
+msgid "Your friend's email"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:80
+msgid "Comments"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:128
+msgid "Note"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\pages\tell-friend.blade.php:129
+msgid "%s will not send any promotional email to you or your friend by using this page."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\partials\home_form.blade.php:37
+msgid "Minimum Price"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\partials\home_form.blade.php:45
+msgid "Maximum Price"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\partials\home_form.blade.php:58
+msgid "Search"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\change-password.blade.php:45
+msgid "Save password"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:3
+msgid "Manage adverts"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:11
+msgid "Your saved properties"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:21
+msgid "You don't have any saved properties"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:22
+msgid "To save a property to your favourites use the button on the right-hand side of the property details page."
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:35
+msgid "Property"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:36
+msgid "Reference"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:37
+msgid "Options"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:54
+msgid "from"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\favourites.blade.php:66
+msgid "Remove"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:2
+msgid "Edit your profile"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:15
+msgid "Your profile"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:21
+msgid "Title"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:50
+msgid "Mobile number"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:64
+msgid "Fax"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:77
+msgid "Your address"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:82
+msgid "Address"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:89
+msgid "Town"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:96
+msgid "County"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:103
+msgid "Postcode"
+msgstr ""
+
+#: C:\express\estatezilla/resources/views/default\user\profile.blade.php:121
+msgid "Save profile"
+msgstr ""

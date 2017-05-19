@@ -1,0 +1,20 @@
+{
+    "title":"Support categories",
+    "type":"object",
+    "properties":{
+        "categories":{
+            "type":"array",
+			"default": [
+					"Report an error you have seen about a property or the site", 
+					"Send us feedback or suggestions",
+					"Advertising on this site",
+					"Anything else"
+				],
+			"items": {
+				"type": "string",
+				"minItems": 2,
+				"maxItems": 5
+			}
+        }
+    }
+}

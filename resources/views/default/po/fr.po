@@ -1,0 +1,258 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: you@example.com\n"
+"POT-Creation-Date: 2017-05-17 19:53GMT Daylight Time\n"
+"PO-Revision-Date: 2017-05-17 19:53GMT Daylight Time\n"
+"Last-Translator: you@example.com\n"
+"Language-Team: English <you@example.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Sign in"
+msgstr "se connecter"
+
+msgid "If you have an account with us, please log in."
+msgstr "Si vous avez un compte avec nous, s'il vous plaît connecter."
+
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Remember me"
+msgstr "Souviens-toi de moi"
+
+msgid "Login"
+msgstr "S'identifier"
+
+msgid "Forgot your password?"
+msgstr "Mot de passe oublié?"
+
+msgid "Click here to reset"
+msgstr "Cliquez ici pour réinitialiser"
+
+msgid "Register"
+msgstr "registre"
+
+msgid ""
+"By creating an account you'll have access to a dashboard where you can post "
+"ads, manage your ads and edit your ads."
+msgstr ""
+"En créant un compte, vous aurez accès à un tableau de bord où vous pouvez "
+"poster des annonces, gérer vos annonces et modifier vos annonces."
+
+msgid "Create an account"
+msgstr "Créer un compte"
+
+msgid "Reset Password"
+msgstr "réinitialiser le mot de passe"
+
+msgid ""
+"Enter the e-mail address associated with your account, then click Continue. "
+"We'll email you a link to a page where you can easily create a new password."
+msgstr ""
+"Entrez l'adresse e-mail associée à votre compte, puis cliquez sur Continuer."
+" Nous vous enverrons par email un lien vers une page où vous pouvez "
+"facilement créer un nouveau mot de passe."
+
+msgid "Full name"
+msgstr "Nom complet"
+
+msgid "Enter your first name"
+msgstr "Entrez votre prénom"
+
+msgid "Enter email"
+msgstr "Entrez email"
+
+msgid "Enter a password"
+msgstr "Entrer un mot de passe"
+
+msgid "Confirm password"
+msgstr "Confirmez le mot de passe"
+
+msgid "Confirm your password"
+msgstr "Confirmer votre mot de passe"
+
+msgid "We can contact you with relevant offers and news"
+msgstr ""
+"Nous pouvons vous contacter avec des offres et des nouvelles pertinentes"
+
+msgid "Create account"
+msgstr "Créer un compte"
+
+msgid ""
+"We'll ask you for your password when you submit a listing or save your "
+"favorite properties"
+msgstr ""
+"Nous vous demanderons votre mot de passe lorsque vous soumettez une liste ou"
+" d'enregistrer vos propriétés favorites"
+
+msgid "My account"
+msgstr "Mon compte"
+
+msgid "Saved properties"
+msgstr "propriétés enregistrées"
+
+msgid "Account details"
+msgstr "Details du compte"
+
+msgid "Change password"
+msgstr "Changer le mot de passe"
+
+msgid "Log out"
+msgstr "Connectez - Out"
+
+msgid "Login/Register"
+msgstr "Connexion / Inscription"
+
+msgid "Language"
+msgstr "La langue"
+
+msgid "All rights reserved"
+msgstr "Tous les droits sont réservés"
+
+msgid "Change location and criteria"
+msgstr "Changer l'emplacement et les critères"
+
+msgid "Location"
+msgstr "Emplacement"
+
+msgid "Start typing..."
+msgstr "Commencer à écrire..."
+
+msgid "Buy/Rent"
+msgstr "Achat / Location"
+
+msgid "Sale"
+msgstr "Vente"
+
+msgid "Rent"
+msgstr "Location"
+
+msgid "All"
+msgstr "Tout"
+
+msgid "Within"
+msgstr "Dans"
+
+msgid "Beds"
+msgstr "Des lits"
+
+msgid "Added"
+msgstr "Ajoutée"
+
+msgid "Update"
+msgstr "Mettre à jour"
+
+msgid "Price range"
+msgstr "Échelle des prix"
+
+msgid "to"
+msgstr "à"
+
+msgid "Property types"
+msgstr "Types de propriété"
+
+msgid "Condition of property"
+msgstr "Condition du bien"
+
+msgid "Features and characteristics"
+msgstr "Caractéristiques et caractéristiques"
+
+msgid "Filter listings"
+msgstr "Filtrer les annonces"
+
+msgid "Sorry, no results found. Please try and broaden your search criteria"
+msgstr ""
+"Désolé, aucun résultat trouvé. S'il vous plaît essayer d'élargir vos "
+"critères de recherche"
+
+msgid "The location '%s' was not found. Showing all results."
+msgstr ""
+"n'a pas été trouvé l'emplacement « % s ». Afficher tous les résultats."
+
+msgid "Grid view"
+msgstr "Voir la grille"
+
+msgid "List view"
+msgstr "Voir la liste"
+
+msgid "properties"
+msgstr "Propriétés"
+
+msgid "Sort by"
+msgstr "Trier par"
+
+msgid "Bedrooms"
+msgstr "Chambres"
+
+msgid "Bathrooms"
+msgstr "Salle de bain"
+
+msgid "Contact us"
+msgstr "Contactez nous"
+
+msgid "We encountered the following errors:"
+msgstr "Nous avons rencontré les erreurs suivantes:"
+
+msgid "First name"
+msgstr "Prénom"
+
+msgid "Last name"
+msgstr "Nom de famille"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Your comments"
+msgstr "Vos commentaires"
+
+msgid "Send"
+msgstr "Envoyer"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Properties"
+msgstr "Propriétés"
+
+msgid "For sale"
+msgstr "À vendre"
+
+msgid "back to listings"
+msgstr "Retour aux fiches descriptives"
+
+msgid "Previous"
+msgstr "précédent"
+
+msgid "Next"
+msgstr "Prochain"
+
+msgid "Description"
+msgstr "La description"
+
+msgid "We haven't received a description for this property"
+msgstr "Nous n'avons pas reçu une description de cette propriété"
+
+msgid "Ref code"
+msgstr "Ref code"
+
+msgid "Features"
+msgstr "Caractéristiques"
+
+msgid "Map"
+msgstr "Carte"
+
+msgid "Additional information"
+msgstr "Information additionnelle"

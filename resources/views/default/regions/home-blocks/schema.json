@@ -1,0 +1,33 @@
+{
+
+	"type":"array",
+	"minItems": 3,
+	"maxItems": 3,
+	"default": [
+			{"title": "Title 1"},
+			{"title": "Title 2"},
+			{"title": "Title 3"}
+	],
+	"items": {
+		"type": "object",
+		"properties": {
+			"title": {
+				"title": "Title",
+				"type": "string"
+			},
+			"description": {
+				"title": "Description",
+				"type": "string"
+			},
+			"image": {
+				"title": "Image URL",
+				"type": "string"
+			},
+			"url": {
+				"title": "Link URL",
+				"type": "string"
+			}
+		}
+	}
+
+}

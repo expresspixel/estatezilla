@@ -1,0 +1,72 @@
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate qn:validate="errors">
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-chevron-right"></i> Pricing</div>
+        <div class="panel-body">
+			
+            <div class="row">
+
+
+                <div class="col-sm-4">
+                    <label>Price</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="property.price" pattern="[0-9]+([\.,][0-9]+)*" format-price>
+                        <span class="input-group-addon">{{settings.default_currency}}</span>
+                    </div>                
+				</div>
+				
+                <div class="col-sm-4">
+                    <label>Reduced price</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="property.reduced_price" pattern="[0-9]+([\.,][0-9]+)*" format-price>
+                        <span class="input-group-addon">{{settings.default_currency}}</span>
+                    </div>  
+				</div>
+
+                <div class="col-sm-4">
+                    <label>Price options</label><br />
+					<label class="checkbox-inline">
+                        <input type="checkbox" name="has_garden" ng-model="property.negotiable_price" ng-true-value="1" ng-false-value="0"> Negotiable
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="has_parking" ng-model="property.poa" ng-true-value="1" ng-false-value="0"> POA
+                    </label>
+                </div>
+			</div>
+			
+			<br />
+			
+			<div class="row">
+                <div class="col-sm-3">
+                    <label>Period</label><br />
+					<select class="form-control" ng-model="property.price_period">
+                        <option value="">-- SELECT --</option>
+                        <option value="per_night">per night</option>
+                        <option value="per_week">per week</option>
+                        <option value="per_month">per month</option>
+                    </select>          
+				</div>
+                <div class="col-sm-3">
+                    <label>&nbsp;</label><br />
+					<select class="form-control" ng-model="property.price_type">
+						<option value="">-- SELECT --</option>
+                        <option value="per_room">per room</option>
+                        <option value="per_person">per person</option>
+                    </select>           
+				</div>
+
+            </div>
+
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" ng-hide="saving" class="btn btn-primary pull-right">Save</button>
+                    <button type="button" ng-show="saving" class="btn btn-primary pull-right">Saving...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
