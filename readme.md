@@ -1,9 +1,9 @@
 <p align="center"><img src="http://estatezilla.s3.amazonaws.com/EstateZilla-logo.png"></p>
 
 <p align="center">
-<a href="http://estatezilla.com"><img src="https://poser.pugx.org/expresspixel/estatezilla/d/total.svg" alt="Total Downloads"></a>
-<a href="http://estatezilla.com"><img src="https://poser.pugx.org/expresspixel/estatezilla/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="http://estatezilla.com"><img src="https://poser.pugx.org/expresspixel/estatezilla/license.svg" alt="License"></a>
+<a href="http://estatezilla.com"><img src="https://poser.pugx.org/expresspixel/estatezilla/d/total" alt="Total Downloads"></a>
+<a href="http://estatezilla.com"><img src="https://poser.pugx.org/expresspixel/estatezilla/v/stable" alt="Latest Stable Version"></a>
+<a href="http://estatezilla.com"><img src="https://poser.pugx.org/expresspixel/estatezilla/license" alt="License"></a>
 </p>
 
 ## About EstateZilla
