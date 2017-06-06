@@ -19,7 +19,7 @@ EstateZilla is a web application that makes it easy to create your own Real Esta
 - Specify which properties you require to be uploaded.
 - SEO and social sharing built in.
 
-EstateZilla is a simple altenative to WordPress that makes it more enjoyable and user friendly to maintain your real estate website. It is a CMS focused on property management and will be regularly updated to be the best property management engine on the planet. Please do give us suggestions to we can 
+EstateZilla is a simple altenative to WordPress that makes it more enjoyable and user friendly to maintain your real estate website. It is a CMS focused on property management and will be regularly updated to be the most user friendly property management engine. Please do give us suggestions to we can improve this mini project.
 
 ## Installing EstateZilla
 
