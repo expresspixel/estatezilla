@@ -47,25 +47,31 @@
 	<div class="tab-pane <?= ($view_type == 'grid')?'active':'' ?>" id="grid-view">
 
 		<div class="row grid-row">
-
 		<? foreach($properties as $property) : ?>
-			<div class="col-xs-4 grid-box " id="grid-<?= $property->id ?>">
-				<div class="well">
-					<div class="row ">
-						<div class="col-xs-12">
-							<a href="<?= $property->url() ?>" class="thumbnail">
-								<img alt="" src="{{$property->thumbnail('listings')}}" width="176" height="120" style="min-height: 70px;"/>
-							</a>
-							<h2 style="margin-top: 0; margin-bottom: 0px; color: #007200;  font-size: 15px;"><a style="font-weight: bold;color: #007200;  font-size: 15px;"href="<?= $property->url() ?>"><?= $property->priceFormatted() ?></a></h2>
-						</div>
-
-						<div class="col-xs-12">
-							<a style="color: #004889; font-size: 15px" href="<?= $property->url() ?>">
-								<strong>{{ $property->title }}</strong>
-							</a>
-							<p>{{ $property->displayable_address }}{{ $property->has_parking }}</p>
-						</div>
+			<div class="col-xs-5 col-md-5">
+				<div class="panel panel-default">
+				<div class="panel-body">
+					<a href="<?= $property->url() ?>"><img alt="<?= $property->title ?>" style="width: 100%" src="{{$property->thumbnail('listings')}}" data-holder-rendered="true"></a>
+					<br />
+					<br />
+					<div class="caption">
+						<a href="<?= $property->url() ?>"><h5 style="margin:0; font-weight: normal; padding: 0; margin-bottom: 5px;"><?= $property->title ?></a></h5>
+						<strong><h4 style="margin:0; padding: 0;"><?= $property->priceFormatted ?></h4></strong>
 					</div>
+					<p>{{ $property->displayable_address }}</p>
+				</div>
+				<div class="panel-footer property-features">
+					<ul class="nav nav-pills nav-justified ">
+						<li><span class="fa fa-bed" aria-hidden="true"></span> <?= $property->num_bedrooms ?></li>
+						<li><span class="fa fa-shower" aria-hidden="true"></span> <?= $property->num_bathrooms ?></li>
+						<? if ($property->property_size): ?>
+							<li><span class="fa fa-arrows-alt" aria-hidden="true"></span> <?= $property->property_size ?></li>
+						<? endif; ?>
+						<? if ($property->has_parking): ?>
+							<li><span class="fa fa-car" aria-hidden="true"></span></li>
+						<? endif; ?>
+					</ul>
+				</div><!-- footer -->
 				</div>
 			</div>
 		<? endforeach; ?>
@@ -101,7 +107,7 @@
 		</div>
 	<? endforeach; ?>
 	</div>
-	
+
 </div>
 
 <?php echo $properties->render(); ?>
