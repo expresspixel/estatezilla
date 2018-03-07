@@ -19,7 +19,7 @@
 		<!-- Optional theme -->
 		<?/*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">*/?>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cosmo/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.3/css/perfect-scrollbar.min.css">
 		<style>
 			.container {
@@ -57,6 +57,16 @@
 			}
 			.property-types-tree li > span {
 				padding-left: 5px;
+			}
+			.property-features {
+				padding: 0;
+			}
+			.property-features li {
+				padding: 10px;
+				border-right: 1px solid rgb(221,221,221);
+			}
+			.property-features li:last-child {
+				border:0;
 			}
 
 			.panel-heading .accordion-toggle:after {
@@ -198,7 +208,7 @@
       }
       var current_lang = '<?= $current_lang ?>';
   </script>
-	
+
 	<script src="{{{ theme_asset('eldarion-ajax.min.js') }}}"></script>
 	<script src="{{{ theme_asset('global.js') }}}"></script>
 
